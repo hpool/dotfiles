@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/buftabs"]
 	path = .vim/bundle/buftabs
 	url = git://github.com/vim-scripts/buftabs.git
+[submodule ".vim/bundle/inkpot"]
+	path = .vim/bundle/inkpot
+	url = https://github.com/ciaranm/inkpot.git
