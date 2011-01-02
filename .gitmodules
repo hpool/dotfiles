@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/YankRing"]
 	path = .vim/bundle/YankRing
 	url = git://github.com/vim-scripts/YankRing.vim
-[submodule ".vim/bundle/MRU"]
-	path = .vim/bundle/MRU
-	url = git://github.com/vim-scripts/mru.vim
 [submodule ".vim/bundle/buftabs"]
 	path = .vim/bundle/buftabs
 	url = git://github.com/vim-scripts/buftabs.git
