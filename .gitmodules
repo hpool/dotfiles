@@ -7,9 +7,6 @@
 [submodule ".vim/bundle/MRU"]
 	path = .vim/bundle/MRU
 	url = git://github.com/vim-scripts/mru.vim
-[submodule ".vim/bundle/AutoComplPop"]
-	path = .vim/bundle/AutoComplPop
-	url = git://github.com/vim-scripts/AutoComplPop.git
 [submodule ".vim/bundle/buftabs"]
 	path = .vim/bundle/buftabs
 	url = git://github.com/vim-scripts/buftabs.git
