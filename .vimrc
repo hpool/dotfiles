@@ -236,3 +236,6 @@ call unite#set_substitute_pattern('file', '^\~', escape($HOME, '\'), -2)
 call unite#set_substitute_pattern('file', '\\\@<! ', '\\ ', -20)
 call unite#set_substitute_pattern('file', '\\ \@!', '/', -30)
 
+" vim-ref
+let g:ref_phpmanual_path = $HOME . '/ref/php'
+
