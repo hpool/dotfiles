@@ -1,8 +1,6 @@
 syntax on
 
-if filereadable(expand('~/.vim/autoload/pathogen.vim'))
-  call pathogen#runtime_append_all_bundles()
-endif
+call pathogen#runtime_append_all_bundles()
 
 if filereadable(expand('~/.vim/color.vimrc'))
   source ~/.vim/color.vimrc
