@@ -238,4 +238,7 @@ call unite#set_substitute_pattern('file', '\\ \@!', '/', -30)
 
 " vim-ref
 let g:ref_phpmanual_path = $HOME . '/ref/php'
+noremap rphp :Ref phpmanual 
+noremap rpy :Ref pydoc 
+noremap ra :Ref alc 
 
