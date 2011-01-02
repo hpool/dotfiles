@@ -201,3 +201,38 @@ autocmd FileType php,html let b:surround_65  = "<a href=\"\r\"></a>" " A : <a hr
 autocmd FileType php,html let b:surround_105 = "<img src=\"\r\" alt=\"\" />" " i : <img src=| alt= />
 autocmd FileType php,html let b:surround_73  = "<img src=\"\" alt=\"\r\" />" " I : <img src= alt| />
 autocmd FileType php,html let b:surround_100 = "<div>\r</div>" " d : <div>|</div>
+
+" unite.vim
+let g:unite_enable_start_insert = 1
+
+noremap ud :UniteWithBufferDir file -buffer-name=file<CR>
+noremap uf :Unite -buffer-name=file file<CR>
+noremap ub :Unite buffer_tab<CR>
+noremap um :Unite file_mru<CR>
+noremap uc :UniteWithCurrentDir file_mru<CR>
+noremap uk :Unite bookmark<CR>
+
+" ESCキーを2回押すと終了する
+autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+autocmd FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+
+call unite#set_substitute_pattern('file', '\$\w\+', '\=eval(submatch(0))', 200)
+
+call unite#set_substitute_pattern('file', '[^~.]\zs/', '*/*', 20)
+call unite#set_substitute_pattern('file', '/\ze[^*]', '/*', 10)
+
+call unite#set_substitute_pattern('file', '^@@', '\=fnamemodify(expand("#"), ":p:h")."/*"', 2)
+call unite#set_substitute_pattern('file', '^@', '\=getcwd()."/*"', 1)
+call unite#set_substitute_pattern('file', '^\\', '~/*')
+
+call unite#set_substitute_pattern('file', '^;v', '~/.vim/*')
+call unite#set_substitute_pattern('file', '^;r', '\=$VIMRUNTIME."/*"')
+if has('win32') || has('win64')
+  call unite#set_substitute_pattern('file', '^;p', 'C:/Program Files/*')
+endif
+
+call unite#set_substitute_pattern('file', '\*\*\+', '*', -1)
+call unite#set_substitute_pattern('file', '^\~', escape($HOME, '\'), -2)
+call unite#set_substitute_pattern('file', '\\\@<! ', '\\ ', -20)
+call unite#set_substitute_pattern('file', '\\ \@!', '/', -30)
+
