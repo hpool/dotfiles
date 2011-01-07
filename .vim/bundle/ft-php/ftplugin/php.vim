@@ -1,5 +1,15 @@
 ""
 " PHP Lint
+autocmd BufWritePost *.php :call PHPLint()
+
+function PHPLint()
+  let result = system( &ft . ' -l ' . bufname(""))
+  let headPart = strpart(result, 0, 16)
+  if headPart != "No syntax errors"
+    echo result
+  endif
+endfunction
+
 nnoremap <buffer> ,l  :<C-u>execute '!' &l:filetype '-l' shellescape(expand('%'))<Return>
 
 :set makeprg=php\ -l\ %
