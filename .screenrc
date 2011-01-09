@@ -1,0 +1,19 @@
+escape ^Tt
+
+defbce on
+# bold = luminous color
+attrcolor b ".I"
+# 256 color
+term xterm-256color
+
+startup_message off
+logfile "$HOME/.screen/screen-%Y%m%d-%n.log"
+
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+# PuTTY connecting, not changed window size
+termcapinfo xterm-256color 'is=^[r^[m^[2J^[H^[?7h^[?1;4;6l'
+
+chdir
