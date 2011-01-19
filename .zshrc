@@ -98,6 +98,8 @@ fi
 
 alias bd="popd"
 
+export MYSQL_PS1='\u@\h:\d> '
+
 # dabbrev
 HARDCOPYFILE=$HOME/tmp/screen-hardcopy
 touch $HARDCOPYFILE
