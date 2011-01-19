@@ -100,6 +100,16 @@ alias bd="popd"
 
 export MYSQL_PS1='\u@\h:\d> '
 
+# historical backward/forward search with linehead string binded to ^P/^N
+#
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+bindkey "\\ep" history-beginning-search-backward-end
+bindkey "\\en" history-beginning-search-forward-end
+
 # dabbrev
 HARDCOPYFILE=$HOME/tmp/screen-hardcopy
 touch $HARDCOPYFILE
