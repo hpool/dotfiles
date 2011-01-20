@@ -106,6 +106,9 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
+" alternate file
+nmap ^ <C-^>
+
 vnoremap * "zy:let @/ = @z<CR>n
 
 nmap <silent> <C-l> :bnext<CR>
