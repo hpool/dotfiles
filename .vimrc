@@ -204,12 +204,13 @@ autocmd FileType php,html let b:surround_100 = "<div>\r</div>" " d : <div>|</div
 " unite.vim
 let g:unite_enable_start_insert = 1
 
-noremap ud :UniteWithBufferDir file -buffer-name=file<CR>
-noremap uf :Unite -buffer-name=file file<CR>
-noremap ub :Unite buffer_tab<CR>
-noremap um :Unite file_mru<CR>
-noremap uc :UniteWithCurrentDir file_mru<CR>
-noremap uk :Unite bookmark<CR>
+noremap ,ud :UniteWithBufferDir file -buffer-name=file<CR>
+noremap ,uf :Unite -buffer-name=file file<CR>
+noremap ,ub :Unite buffer_tab<CR>
+noremap ,um :Unite file_mru<CR>
+noremap ,uc :UniteWithCurrentDir file_mru<CR>
+noremap ,uk :Unite bookmark<CR>
+noremap ,ur :Unite -buffer-name=register register<CR>
 
 " ESCキーを2回押すと終了する
 autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
