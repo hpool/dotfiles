@@ -21,3 +21,5 @@ nnoremap <buffer> ,l  :<C-u>execute '!' &l:filetype '-l' shellescape(expand('%')
 
 let php_sql_query=1
 let php_htmlInStrings=1
+
+nnoremap <buffer> <F1> :vimgrep /\s*function / %<CR>:cw<CR>
