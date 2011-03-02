@@ -44,6 +44,10 @@ highlight SpecialKey guibg=#222222 cterm=underline ctermfg=darkgrey
 set list
 set listchars=tab:>-,extends:<,trail:\ 
 
+" 行末のスペースをハイライト
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
+
 " Insertモード時にStatus Lineの色を変える
 if ! exists("g:hi_insert")
   let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=grey ctermbg=darkmagenta cterm=none'
