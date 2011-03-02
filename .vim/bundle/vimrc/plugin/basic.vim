@@ -3,6 +3,10 @@
 "
 " ~/.vimrc
 
+if filereadable(expand('~/.vim/color.vimrc'))
+  source ~/.vim/color.vimrc
+endif
+
 syntax on
 
 set autoindent
@@ -32,7 +36,6 @@ set smartcase
 set incsearch
 
 set fileformats=unix,dos,mac
-
 
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
 match ZenkakuSpace /　/
@@ -93,8 +96,4 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 
-
-if filereadable(expand('~/.vim/color.vimrc'))
-  source ~/.vim/color.vimrc
-endif
 
