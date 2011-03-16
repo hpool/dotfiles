@@ -110,6 +110,10 @@ bindkey "^N" history-beginning-search-forward-end
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
+# zsh 4.3.10 以降じゃないと動かないと思う
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^S' history-incremental-pattern-search-forward
+
 # dabbrev
 HARDCOPYFILE=$HOME/tmp/screen-hardcopy
 touch $HARDCOPYFILE
