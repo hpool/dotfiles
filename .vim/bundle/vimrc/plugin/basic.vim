@@ -5,6 +5,8 @@
 
 if filereadable(expand('~/.vim/color.vimrc'))
   source ~/.vim/color.vimrc
+  "set t_Co=256
+  "colorscheme inkpot
 endif
 
 syntax on
