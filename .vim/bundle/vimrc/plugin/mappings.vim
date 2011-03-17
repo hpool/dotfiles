@@ -37,3 +37,9 @@ nmap <silent> <C-h> :bprevious<CR>
 "omnifunction
 imap <C-f> <C-x><C-o>
 
+
+"let g:us_keyboard = 1
+if exists('g:us_keyboard') && g:us_keyboard == 1
+    nnoremap ; :
+endif
+

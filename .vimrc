@@ -1,6 +1,8 @@
 
 " .vim/bundle/vimrc/plugin/basic.vim
 "
+" (.vim/bundle/vimrc/plugin/local.vim)
+"
 " .vim/bundle/vimrc/plugin/mappings.vim
 
 
