@@ -39,16 +39,27 @@ set incsearch
 
 set fileformats=unix,dos,mac
 
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
-match ZenkakuSpace /　/
-
-highlight SpecialKey guibg=#222222 cterm=underline ctermfg=darkgrey
-set list
-set listchars=tab:>-,extends:<,trail:\ 
+" 全角スペースをハイライト
+if has("syntax")
+    function! ActivateInvisibleIndicator()
+        syntax match InvisibleJISX0208Space "　" display containedin=ALL
+        highlight InvisibleJISX0208Space cterm=underline ctermfg=lightblue guibg=white
+    endf
+    augroup invisible
+        autocmd! invisible
+        autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
+    augroup END
+endif
 
 " 行末のスペースをハイライト
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
+
+" SpecialKey
+highlight SpecialKey guibg=#222222 cterm=underline ctermfg=darkgrey
+set list
+set listchars=tab:>-,extends:<,trail:\ 
+
 
 " Insertモード時にStatus Lineの色を変える
 if ! exists("g:hi_insert")
