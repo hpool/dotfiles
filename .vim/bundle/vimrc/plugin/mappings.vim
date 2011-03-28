@@ -39,3 +39,15 @@ imap <C-f> <C-x><C-o>
 
 nnoremap ; :
 
+" Vim(Mac)
+if has('mac') && !has('gui')
+    nnoremap <silent> <Space>y :.w !pbcopy<CR><CR>
+    vnoremap <silent> <Space>y :w !pbcopy<CR><CR>
+    nnoremap <silent> <Space>p :r !pbpaste<CR>
+    vnoremap <silent> <Space>p :r !pbpaste<CR>
+" GVim(Mac & Win)
+else
+    noremap <Space>y "+y
+    noremap <Space>p "+p
+endif
+
