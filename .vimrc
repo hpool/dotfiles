@@ -1,9 +1,9 @@
 
-" .vim/bundle/vimrc/plugin/basic.vim
+" .vim/bundle/000-vimrc/plugin/basic.vim
 "
-" (.vim/bundle/vimrc/plugin/local.vim)
+" (.vim/bundle/000-vimrc/plugin/local.vim)
 "
-" .vim/bundle/vimrc/plugin/mappings.vim
+" .vim/bundle/000-vimrc/plugin/mappings.vim
 
 
 " pathogen
