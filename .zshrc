@@ -191,7 +191,7 @@ if [ x$TERM = xscreen -o $TERM = "xterm-256color" ]; then
 fi
 
 
-if [ "$TERM" = screen -o "$TERM" = "xterm-256color" ]; then
+if [ "$TERM" = xscreen -o "$TERM" = "xterm-256color" ]; then
     chpwd () { echo -n "_`dirs`\\" && ll }
     preexec() {
         # see [zsh-workers:13180]
