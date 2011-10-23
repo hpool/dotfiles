@@ -14,10 +14,11 @@ call pathogen#runtime_append_all_bundles()
 
 "--------------------------------------------------
 "buftabs
+" .vim/bundle/buftabs/plugin/buftabs.vim
 "http://vim.sourceforge.net/scripts/script.php?script_id=1664
+let g:buftabs_active_highlight_group="Visual"
 let g:buftabs_only_basename=1
 let g:buftabs_in_statusline=1
-
 
 "--------------------------------------------------
 "YankRing

@@ -18,7 +18,7 @@ set showmatch
 set showmode
 set laststatus=2
 set showcmd
-set statusline=%<%f\%m%r%h%w%=%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%l,%c%V%8P
+set statusline=%<%f\%m%r%h%w%=%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}%3l,%3v%4P
 
 set backspace=2
 set nolist
