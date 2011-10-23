@@ -114,4 +114,4 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 
-
+autocmd FileType php,html :setlocal includeexpr=substitute(v:fname,'^\\/','','')
