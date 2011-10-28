@@ -279,3 +279,7 @@ if is-at-least 4.3.7; then
   RPROMPT="%1(v|%F{green}%1v%f|)"$RPROMPT
 fi
 
+# git completion
+if [[ -f "~/.git-completion.sh" ]]; then
+  source ~/.git-completion.sh
+fi
