@@ -111,8 +111,11 @@ bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
 # zsh 4.3.10 以降じゃないと動かないと思う
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
+autoload -Uz is-at-least
+if is-at-least 4.3.10; then
+  bindkey '^R' history-incremental-pattern-search-backward
+  bindkey '^S' history-incremental-pattern-search-forward
+fi
 
 # dabbrev
 HARDCOPYFILE=$HOME/tmp/screen-hardcopy
