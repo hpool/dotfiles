@@ -84,13 +84,13 @@ else
     alias ls='ls -FG'
 fi
 alias ll='ls -la'
-
 alias lv="lv -c"
-
-alias -g L="| $PAGER"
-alias -g G="| grep"
-
 alias grep='grep --color'
+alias sudo='sudo '
+
+alias L="| $PAGER"
+alias G="| grep"
+alias V="| vim -R -"
 
 if [ -x "`which vim 2>/dev/null`" ]; then
   alias vi='vim'
