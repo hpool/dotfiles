@@ -41,7 +41,7 @@ set incsearch
 set fileformats=unix,dos,mac
 
 " 全角スペースをハイライト
-if has("syntax")
+if has("syntax") && !(has('mac') && has('gui'))
     function! ActivateInvisibleIndicator()
         syntax match InvisibleJISX0208Space "　" display containedin=ALL
         highlight InvisibleJISX0208Space cterm=underline ctermfg=lightblue guibg=white
