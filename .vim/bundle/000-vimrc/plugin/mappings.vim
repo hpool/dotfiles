@@ -27,6 +27,11 @@ vnoremap <silent> // y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
 " 選択した文字列を置換
 vnoremap /r "xy:%s/<C-R>=escape(@x, '\\/.*$^~[]')<CR>//gc<Left><Left><Left>
 
+autocmd QuickfixCmdPost vimgrep,grep copen
+
+nmap ,n :cn<CR>
+nmap ,p :cp<CR>
+
 
 " alternate file
 nmap ^ <C-^>
