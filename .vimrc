@@ -21,6 +21,13 @@ let g:buftabs_only_basename=1
 let g:buftabs_in_statusline=1
 
 "--------------------------------------------------
+" grep.vim
+" :Gb <args> でGrepBufferする
+command! -nargs=1 GB :GrepBuffer <args>
+" カーソル下の単語をGrepBufferする
+nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
+
+"--------------------------------------------------
 "YankRing
 "http://www.vim.org/scripts/script.php?script_id=1234
 nmap ,y :YRShow<CR>
