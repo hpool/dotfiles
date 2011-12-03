@@ -31,6 +31,7 @@ nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
 "YankRing
 "http://www.vim.org/scripts/script.php?script_id=1234
 nmap ,y :YRShow<CR>
+let g:yankring_history_file = '.vim_yankring_history'
 
 
 "--------------------------------------------------
