@@ -87,6 +87,7 @@ alias ll='ls -la'
 alias lv="lv -c"
 alias grep='grep --color'
 alias sudo='sudo '
+alias bd="popd"
 
 alias L="| $PAGER"
 alias G="| grep"
@@ -96,8 +97,9 @@ if [ -x "`which vim 2>/dev/null`" ]; then
   alias vi='vim'
 fi
 
-alias bd="popd"
-
+if [ -x "`which rlwrap 2>/dev/null`" ]; then
+  alias mysql='rlwrap -a"Enter password:" -pRED mysql'
+fi
 export MYSQL_PS1='\u@\h:\d> '
 
 # historical backward/forward search with linehead string binded to ^P/^N
