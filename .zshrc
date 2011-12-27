@@ -9,12 +9,14 @@ bindkey -e
 
 #PAGER
 if [ -x "`which lv 2>/dev/null`" ]; then
+    alias lv="lv -c"
     export PAGER=lv
 elif [ -x "`which less 2>/dev/null`" ]; then
     export PAGER=less
 else
     export PAGER=more
 fi
+alias lv=$PAGER
 
 
 if [ -x "`which vim 2>/dev/null`" ]; then
@@ -84,7 +86,6 @@ else
     alias ls='ls -FG'
 fi
 alias ll='ls -la'
-alias lv="lv -c"
 alias grep='grep --color'
 alias sudo='sudo '
 alias bd="popd"
