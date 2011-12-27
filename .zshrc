@@ -269,7 +269,7 @@ zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
 zstyle ':vcs_info:bzr:*' use-simple true
 
 autoload -Uz is-at-least
-if is-at-least 4.3.7; then
+if is-at-least 4.3.10; then
   zstyle ':vcs_info:git:*' check-for-changes true
   zstyle ':vcs_info:git:*' stagedstr "+"    # 適当な文字列に変更する
   zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
@@ -281,7 +281,6 @@ if is-at-least 4.3.7; then
       [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
   }
   add-zsh-hook precmd _update_vcs_info_msg
-  #RPROMPT="%1(v|%F{green}%1v%f|)"
   RPROMPT="%1(v|%F{green}%1v%f|)"$RPROMPT
 fi
 
