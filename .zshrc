@@ -13,11 +13,10 @@ if [ -x "`which lv 2>/dev/null`" ]; then
     export PAGER=lv
 elif [ -x "`which less 2>/dev/null`" ]; then
     export PAGER=less
+    alias lv=$PAGER
 else
     export PAGER=more
 fi
-alias lv=$PAGER
-
 
 if [ -x "`which vim 2>/dev/null`" ]; then
     export SVN_EDITOR=vim
