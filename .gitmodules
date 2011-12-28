@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/sudo.vim"]
+	path = .vim/bundle/sudo.vim
+	url = git://github.com/vim-scripts/sudo.vim.git
