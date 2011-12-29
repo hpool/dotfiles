@@ -13,7 +13,7 @@ call pathogen#runtime_append_all_bundles()
 " plugin
 
 "--------------------------------------------------
-"buftabs
+" buftabs
 " .vim/bundle/buftabs/plugin/buftabs.vim
 "http://vim.sourceforge.net/scripts/script.php?script_id=1664
 let g:buftabs_active_highlight_group="Visual"
@@ -28,14 +28,14 @@ command! -nargs=1 GB :GrepBuffer <args>
 nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
 
 "--------------------------------------------------
-"YankRing
-"http://www.vim.org/scripts/script.php?script_id=1234
+" YankRing
+" http://www.vim.org/scripts/script.php?script_id=1234
 nmap ,y :YRShow<CR>
 let g:yankring_history_file = '.vim_yankring_history'
 
 
 "--------------------------------------------------
-"MiniBufExplorer
+" MiniBufExplorer
 "nmap <Space> :MBEbn<CR>
 "let g:miniBufExplMapWindowNavVim = 1
 "let g:miniBufExplSplitBelow = 0
@@ -81,7 +81,7 @@ let g:yankring_history_file = '.vim_yankring_history'
 
 
 "--------------------------------------------------
-"surround
+" surround
 " http://www.vim.org/scripts/script.php?script_id=1697
 autocmd FileType php,html let b:surround_45 = "<?php \r ?>" " 45 = -
 
@@ -114,6 +114,7 @@ noremap ,um :Unite file_mru<CR>
 noremap ,uc :UniteWithCurrentDir file_mru<CR>
 noremap ,uk :Unite bookmark<CR>
 noremap ,ur :Unite -buffer-name=register register<CR>
+noremap ,uo :Unite outline<CR>
 
 " ESCキーを2回押すと終了する
 autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
