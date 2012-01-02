@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/unite-outline"]
 	path = .vim/bundle/unite-outline
 	url = git://github.com/h1mesuke/unite-outline.git
+[submodule ".vim/bundle/Source-Explorer-srcexpl.vim"]
+	path = .vim/bundle/Source-Explorer-srcexpl.vim
+	url = git://github.com/vim-scripts/Source-Explorer-srcexpl.vim.git
