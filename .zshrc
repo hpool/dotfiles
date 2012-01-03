@@ -241,6 +241,10 @@ if [[ -f "$HOME/.zsh/host-$h.zshrc" ]]; then
     source "$HOME/.zsh/host-$h.zshrc"
 fi
 
+# rvm
+if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+    source $HOME/.rvm/scripts/rvm
+fi
 
 # CPAN(local::lib)
 if [ -x $HOME/local/lib/perl5 ]; then
