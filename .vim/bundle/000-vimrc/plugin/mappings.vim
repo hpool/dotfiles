@@ -33,9 +33,6 @@ nmap ,n :cn<CR>
 nmap ,p :cp<CR>
 
 
-" alternate file
-nmap ^ <C-^>
-
 nmap <silent> <C-l> :bnext<CR>
 nmap <silent> <C-h> :bprevious<CR>
 
