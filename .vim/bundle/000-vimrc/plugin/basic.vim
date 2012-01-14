@@ -38,8 +38,9 @@ set smartcase
 "set nohlsearch
 set incsearch
 
-set fileformats=unix,dos,mac
 set encoding=utf-8
+set fileencodings=ucs_bom,utf8,ucs-2le,ucs-2
+set fileformats=unix,dos,mac
 
 
 " 文字コードの自動認識
@@ -63,7 +64,7 @@ if has('iconv')
   if &encoding ==# 'utf-8'
     let s:fileencodings_default = &fileencodings
     let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
-    let &fileencodings = &fileencodings .','. s:fileencodings_default
+    let &fileencodings = s:fileencodings_default .','. &fileencodings
     unlet s:fileencodings_default
   else
     let &fileencodings = &fileencodings .','. s:enc_jis
