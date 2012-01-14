@@ -6,9 +6,13 @@
 " .vim/bundle/000-vimrc/plugin/mappings.vim
 
 
-" pathogen
+" pathogen {{{
+filetype off
 call pathogen#runtime_append_all_bundles()
-
+call pathogen#helptags()
+set helpfile=$VIMRUNTIME/doc/help.txt
+filetype on
+" }}}
 
 " plugin
 
