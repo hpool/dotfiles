@@ -30,6 +30,7 @@ let g:buftabs_in_statusline=1
 command! -nargs=1 GB :GrepBuffer <args>
 " カーソル下の単語をGrepBufferする
 nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
+nnoremap <C-g><C-g> :grep<Space><C-r><C-w><Space>.<Enter>
 
 "--------------------------------------------------
 " YankRing

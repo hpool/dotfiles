@@ -19,6 +19,7 @@ set showmode
 set laststatus=2
 set showcmd
 set statusline=%<%f\%m%r%h%w%=%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}%3l,%3v%4P
+set grepprg=grep\ -rnIH\ $*\ /dev/null
 
 set backspace=2
 set nolist
