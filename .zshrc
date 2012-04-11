@@ -1,11 +1,11 @@
 
+bindkey -e
+
 stty stop undef
 
 # Enable compsys completion.
 autoload -U compinit
 compinit
-
-bindkey -e
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' format '%B%d%b'
@@ -15,61 +15,58 @@ zstyle ':completion:*' keep-prefix
 zstyle ':completion:*' completer \
     _oldlist _complete _match _history _ignored _approximate _prefix
 
-setopt no_beep
-
-
-#PAGER
-if [ -x "`which lv 2>/dev/null`" ]; then
-    alias lv="lv -c"
-    export PAGER=lv
-elif [ -x "`which less 2>/dev/null`" ]; then
-    export PAGER=less
-    alias lv=$PAGER
-else
-    export PAGER=more
-fi
-
-if [ -x "`which vim 2>/dev/null`" ]; then
-    export SVN_EDITOR=vim
-    export EDITOR=vim
-elif [ -x "`which vi 2>/dev/null`" ]; then
-    export SVN_EDITOR=vi
-    export EDITOR=vi
-fi
-
-setopt always_last_prompt
-setopt append_history
-setopt auto_cd
-setopt auto_pushd
 setopt auto_list
 setopt auto_menu
 setopt auto_param_keys
 setopt auto_param_slash
-setopt auto_resume
-#setopt brace_cd
-setopt NO_flow_control
-setopt hist_verify
-setopt ignore_eof
-setopt list_types
-#setopt transient_rprompt
+setopt no_beep
 setopt correct
 setopt list_packed
-
+setopt list_types
 ## --prefix=~/localというように「=」の後でも
 ### 「~」や「=コマンド」などのファイル名展開を行う。
 setopt magic_equal_subst
 setopt mark_dirs
 
 
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt always_last_prompt
+setopt auto_resume
+setopt ignore_eof
+#setopt transient_rprompt
+
+
 # history
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
 SAVEHIST=100000
+setopt append_history
+setopt extended_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
-setopt extended_history
+setopt hist_verify
+setopt no_flow_control
 setopt share_history
 function history-all { history -E 1 }
+# historical backward/forward search with linehead string binded to ^P/^N
+#
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+bindkey "\\ep" history-beginning-search-backward-end
+bindkey "\\en" history-beginning-search-forward-end
+
+# zsh 4.3.10 以降じゃないと動かないと思う
+autoload -Uz is-at-least
+if is-at-least 4.3.10; then
+  bindkey '^R' history-incremental-pattern-search-backward
+  bindkey '^S' history-incremental-pattern-search-forward
+fi
+
 
 # color
 local GREEN=$'%{\e[1;32m%}'
@@ -93,11 +90,32 @@ setopt PROMPT_SUBST
 #PROMPT="%{^32m%}[$WINDOW]%{^m%}\$ "
 #RPROMPT='%{^34m%}[%5~]%{^00m%}'
 
+
+#PAGER
+if [ -x "`which lv 2>/dev/null`" ]; then
+    alias lv="lv -c"
+    export PAGER=lv
+elif [ -x "`which less 2>/dev/null`" ]; then
+    export PAGER=less
+    alias lv=$PAGER
+else
+    export PAGER=more
+fi
+
+if [ -x "`which vim 2>/dev/null`" ]; then
+    export SVN_EDITOR=vim
+    export EDITOR=vim
+elif [ -x "`which vi 2>/dev/null`" ]; then
+    export SVN_EDITOR=vi
+    export EDITOR=vi
+fi
+
 if [ `uname` = "Linux" ]; then
     alias ls='ls --color=auto'
 else
     alias ls='ls -FG'
 fi
+
 alias ll='ls -la'
 alias grep='grep --color'
 alias sudo='sudo '
@@ -111,27 +129,13 @@ if [ -x "`which vim 2>/dev/null`" ]; then
   alias vi='vim'
 fi
 
+
+# MySQL
 if [ -x "`which rlwrap 2>/dev/null`" ]; then
   alias mysql='rlwrap -a"Enter password:" -pRED mysql'
 fi
 export MYSQL_PS1='\u@\h:\d> '
 
-# historical backward/forward search with linehead string binded to ^P/^N
-#
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
-bindkey "\\ep" history-beginning-search-backward-end
-bindkey "\\en" history-beginning-search-forward-end
-
-# zsh 4.3.10 以降じゃないと動かないと思う
-autoload -Uz is-at-least
-if is-at-least 4.3.10; then
-  bindkey '^R' history-incremental-pattern-search-backward
-  bindkey '^S' history-incremental-pattern-search-forward
-fi
 
 # dabbrev
 HARDCOPYFILE=$HOME/tmp/screen-hardcopy
@@ -148,6 +152,7 @@ zle -C dabbrev-complete menu-complete dabbrev-complete
 bindkey '^o' dabbrev-complete
 bindkey '^o^_' reverse-menu-complete
 
+
 #####################
 # auto-fu.zsh
 # https://github.com/hchbaw/auto-fu.zsh
@@ -159,10 +164,6 @@ if [ -f ~/.zsh/auto-fu.zsh ]; then
     zle -N zle-line-init
 fi
 
-
-#function chpwd(){
-# ll
-#}
 
 function cdup(){
  echo
@@ -211,8 +212,8 @@ esac
 
 # ssh
 function ssh_screen(){
- eval server=\${$#}
- screen -t $server ssh "$@"
+    eval server=\${$#}
+    screen -t $server ssh "$@"
 }
 
 if [ x$TERM = xscreen -o $TERM = "xterm-256color" ]; then
@@ -283,6 +284,7 @@ if [[ $VIRTUALENVWRAPPER_INITIALIZED -ne 1 ]] && [ -f ~/.virtualenvwrapper.sh ];
   export VIRTUALENVWRAPPER_INITIALIZED=1
 fi
 
+
 # vcs_info
 autoload -Uz add-zsh-hook
 autoload -Uz colors
@@ -315,3 +317,4 @@ fi
 if [[ -f "~/.git-completion.sh" ]]; then
   source ~/.git-completion.sh
 fi
+
