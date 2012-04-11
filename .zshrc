@@ -7,6 +7,17 @@ compinit
 
 bindkey -e
 
+zstyle ':completion:*' menu select
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' keep-prefix
+zstyle ':completion:*' completer \
+    _oldlist _complete _match _history _ignored _approximate _prefix
+
+setopt no_beep
+
+
 #PAGER
 if [ -x "`which lv 2>/dev/null`" ]; then
     alias lv="lv -c"
@@ -35,16 +46,19 @@ setopt auto_menu
 setopt auto_param_keys
 setopt auto_param_slash
 setopt auto_resume
-setopt NO_beep
 #setopt brace_cd
 setopt NO_flow_control
 setopt hist_verify
 setopt ignore_eof
 setopt list_types
-setopt mark_dirs
 #setopt transient_rprompt
 setopt correct
 setopt list_packed
+
+## --prefix=~/localというように「=」の後でも
+### 「~」や「=コマンド」などのファイル名展開を行う。
+setopt magic_equal_subst
+setopt mark_dirs
 
 
 # history
@@ -135,6 +149,16 @@ bindkey '^o' dabbrev-complete
 bindkey '^o^_' reverse-menu-complete
 
 #####################
+# auto-fu.zsh
+# https://github.com/hchbaw/auto-fu.zsh
+if [ -f ~/.zsh/auto-fu.zsh ]; then
+    source ~/.zsh/auto-fu.zsh
+    function zle-line-init () {
+        auto-fu-init
+    }
+    zle -N zle-line-init
+fi
+
 
 #function chpwd(){
 # ll
