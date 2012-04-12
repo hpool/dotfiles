@@ -15,6 +15,19 @@ zstyle ':completion:*' keep-prefix
 zstyle ':completion:*' completer \
     _oldlist _complete _match _history _ignored _approximate _prefix
 
+#####################
+# auto-fu.zsh
+# https://github.com/hchbaw/auto-fu.zsh
+if [ -f ~/.zsh/auto-fu.zsh ]; then
+    source ~/.zsh/auto-fu.zsh
+    function zle-line-init () {
+        auto-fu-init
+    }
+    zle -N zle-line-init
+    zstyle ':auto-fu:var' postdisplay $''
+fi
+
+
 setopt auto_list
 setopt auto_menu
 setopt auto_param_keys
@@ -151,18 +164,6 @@ dabbrev-complete () {
 zle -C dabbrev-complete menu-complete dabbrev-complete
 bindkey '^o' dabbrev-complete
 bindkey '^o^_' reverse-menu-complete
-
-
-#####################
-# auto-fu.zsh
-# https://github.com/hchbaw/auto-fu.zsh
-if [ -f ~/.zsh/auto-fu.zsh ]; then
-    source ~/.zsh/auto-fu.zsh
-    function zle-line-init () {
-        auto-fu-init
-    }
-    zle -N zle-line-init
-fi
 
 
 function cdup(){
