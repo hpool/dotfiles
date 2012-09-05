@@ -158,6 +158,7 @@ noremap ra :Ref alc
 
 "--------------------------------------------------
 " neocomplcache
+    set completeopt=menuone
 	" Disable AutoComplPop.
 	let g:acp_enableAtStartup = 0
 	" Use neocomplcache.
