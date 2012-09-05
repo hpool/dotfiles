@@ -38,6 +38,9 @@ nnoremap <C-g><C-g> :grep<Space><C-r><C-w><Space>.<Enter>
 nmap ,y :YRShow<CR>
 let g:yankring_history_file = '.vim_yankring_history'
 
+"--------------------------------------------------
+" ctrlp
+let g:ctrlp_map = ',p'
 
 "--------------------------------------------------
 " MiniBufExplorer
