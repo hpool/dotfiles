@@ -41,6 +41,9 @@ imap <C-f> <C-x><C-o>
 
 nnoremap ; :
 
+"tags
+nnoremap <C-_> :pop<CR>
+
 " Vim(Mac)
 if has('mac') && !has('gui')
     nnoremap <silent> <Space>y :.w !pbcopy<CR><CR>

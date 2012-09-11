@@ -54,6 +54,10 @@ let g:ctrlp_map = ',p'
 
 
 "--------------------------------------------------
+" SrcExpl.vim
+nmap <C-I> <C-W>j:call g:SrcExpl_Jump()<CR>
+
+"--------------------------------------------------
 " autocomplpop.vim
 " http://www.vim.org/scripts/script.php?script_id=1879
 
