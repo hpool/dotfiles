@@ -22,6 +22,7 @@ Bundle 'sudo.vim'
 Bundle 'h1mesuke/unite-outline'
 Bundle 'Source-Explorer-srcexpl.vim'
 Bundle 'php.vim--Garvin'
+Bundle 'stephpy/vim-php-cs-fixer'
 
 
 filetype plugin indent on     " required!
@@ -44,6 +45,10 @@ endif
 
 
 " plugin
+
+"--------------------------------------------------
+" vim-php-cs-fixer
+let g:php_cs_fixer_path = "~/bin/php-cs-fixer.phar"
 
 "--------------------------------------------------
 " buftabs
