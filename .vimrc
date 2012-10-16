@@ -1,18 +1,47 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-" .vim/bundle/000-vimrc/plugin/basic.vim
-"
-" (.vim/bundle/000-vimrc/plugin/local.vim)
-"
-" .vim/bundle/000-vimrc/plugin/mappings.vim
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+Bundle 'vim-scripts/YankRing'
+Bundle 'vim-scripts/buftabs'
+Bundle 'ciaranm/inkpot'
+Bundle 'Shougo/unite'
+Bundle 'thinca/vim-ref'
+Bundle 'thinca/vim-quickrun'
+Bundle 'Shougo/neocomplcache'
+Bundle 'soh335/vim-symfony'
+Bundle 'vim-scripts/grep'
+Bundle 'kien/ctrlp'
+Bundle 'vim-scripts/sudo'
+Bundle 'h1mesuke/unite-outline'
+Bundle 'vim-scripts/Source-Explorer-srcexpl'
+Bundle 'vim-scripts/php.vim--Garvin'
 
 
-" pathogen {{{
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-set helpfile=$VIMRUNTIME/doc/help.txt
-filetype on
-" }}}
+filetype plugin indent on     " required!
+
+
+" .vim/plugin/basic.vim
+" .vim/plugin/local.vim
+" .vim/plugin/mappings.vim
+if filereadable(expand('~/.vim/plugin/basic.vim'))
+  source ~/.vim/plugin/basic.vim
+endif
+if filereadable(expand('~/.vim/plugin/local.vim'))
+  source ~/.vim/plugin/local.vim
+endif
+if filereadable(expand('~/.vim/plugin/mappings.vim'))
+  source ~/.vim/plugin/mappings.vim
+endif
+
+
+
 
 " plugin
 
@@ -132,25 +161,6 @@ noremap ,uo :Unite outline<CR>
 autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 autocmd FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
-call unite#set_substitute_pattern('file', '\$\w\+', '\=eval(submatch(0))', 200)
-
-call unite#set_substitute_pattern('file', '[^~.]\zs/', '*/*', 20)
-call unite#set_substitute_pattern('file', '/\ze[^*]', '/*', 10)
-
-call unite#set_substitute_pattern('file', '^@@', '\=fnamemodify(expand("#"), ":p:h")."/*"', 2)
-call unite#set_substitute_pattern('file', '^@', '\=getcwd()."/*"', 1)
-call unite#set_substitute_pattern('file', '^\\', '~/*')
-
-call unite#set_substitute_pattern('file', '^;v', '~/.vim/*')
-call unite#set_substitute_pattern('file', '^;r', '\=$VIMRUNTIME."/*"')
-if has('win32') || has('win64')
-  call unite#set_substitute_pattern('file', '^;p', 'C:/Program Files/*')
-endif
-
-call unite#set_substitute_pattern('file', '\*\*\+', '*', -1)
-call unite#set_substitute_pattern('file', '^\~', escape($HOME, '\'), -2)
-call unite#set_substitute_pattern('file', '\\\@<! ', '\\ ', -20)
-call unite#set_substitute_pattern('file', '\\ \@!', '/', -30)
 
 "--------------------------------------------------
 " vim-ref
