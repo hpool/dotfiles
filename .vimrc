@@ -8,20 +8,20 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle'
 
-Bundle 'vim-scripts/YankRing'
-Bundle 'vim-scripts/buftabs'
+Bundle 'YankRing.vim'
+Bundle 'buftabs'
 Bundle 'ciaranm/inkpot'
-Bundle 'Shougo/unite'
+Bundle 'Shougo/unite.vim'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
 Bundle 'Shougo/neocomplcache'
 Bundle 'soh335/vim-symfony'
-Bundle 'vim-scripts/grep'
-Bundle 'kien/ctrlp'
-Bundle 'vim-scripts/sudo'
+Bundle 'grep.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'sudo.vim'
 Bundle 'h1mesuke/unite-outline'
-Bundle 'vim-scripts/Source-Explorer-srcexpl'
-Bundle 'vim-scripts/php.vim--Garvin'
+Bundle 'Source-Explorer-srcexpl.vim'
+Bundle 'php.vim--Garvin'
 
 
 filetype plugin indent on     " required!
