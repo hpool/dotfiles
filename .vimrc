@@ -8,6 +8,7 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle'
 
+Bundle 'ack.vim'
 Bundle 'YankRing.vim'
 Bundle 'buftabs'
 Bundle 'ciaranm/inkpot'
