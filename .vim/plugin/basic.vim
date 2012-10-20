@@ -20,7 +20,9 @@ set laststatus=2
 set showcmd
 set statusline=%<%f\%m%r%h%w%=%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}%3l,%3v%4P
 set grepprg=grep\ -rnIH\ $*\ /dev/null
-set wildmenu
+
+set nowildmenu
+set wildmode=list:full
 
 set backspace=2
 set nolist
