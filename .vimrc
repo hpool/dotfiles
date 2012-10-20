@@ -25,9 +25,12 @@ NeoBundle 'grep.vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'sudo.vim'
 NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'Source-Explorer-srcexpl.vim'
 NeoBundle 'php.vim--Garvin'
 NeoBundle 'stephpy/vim-php-cs-fixer'
+
+NeoBundle 'SrcExpl'
+NeoBundle 'Trinity'
+NeoBundle 'taglist.vim'
 
 
 filetype plugin indent on     " required!
