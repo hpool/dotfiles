@@ -1,33 +1,43 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-Bundle 'ack.vim'
-Bundle 'YankRing.vim'
-Bundle 'buftabs'
-Bundle 'ciaranm/inkpot'
-Bundle 'Shougo/unite.vim'
-Bundle 'thinca/vim-ref'
-Bundle 'thinca/vim-quickrun'
-Bundle 'Shougo/neocomplcache'
-Bundle 'soh335/vim-symfony'
-Bundle 'grep.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'sudo.vim'
-Bundle 'h1mesuke/unite-outline'
-Bundle 'Source-Explorer-srcexpl.vim'
-Bundle 'php.vim--Garvin'
-Bundle 'stephpy/vim-php-cs-fixer'
+" Recommended to install
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimproc'
+
+NeoBundle 'ack.vim'
+NeoBundle 'YankRing.vim'
+NeoBundle 'buftabs'
+NeoBundle 'ciaranm/inkpot'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'soh335/vim-symfony'
+NeoBundle 'grep.vim'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'sudo.vim'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'Source-Explorer-srcexpl.vim'
+NeoBundle 'php.vim--Garvin'
+NeoBundle 'stephpy/vim-php-cs-fixer'
 
 
 filetype plugin indent on     " required!
 
+" Installation check.
+if neobundle#exists_not_installed_bundles()
+  echomsg 'Not installed bundles : ' .
+        \ string(neobundle#get_not_installed_bundle_names())
+  echomsg 'Please execute ":NeoBundleInstall" command.'
+  "finish
+endif
 
 " .vim/plugin/basic.vim
 " .vim/plugin/local.vim
