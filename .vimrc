@@ -11,27 +11,28 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimproc'
 
+NeoBundle 'sudo.vim'
 NeoBundle 'ack.vim'
+NeoBundle 'grep.vim'
 NeoBundle 'YankRing.vim'
 NeoBundle 'buftabs'
-NeoBundle 'ciaranm/inkpot'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'soh335/vim-symfony'
-NeoBundle 'grep.vim'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'sudo.vim'
-NeoBundle 'h1mesuke/unite-outline'
+
 NeoBundle 'php.vim--Garvin'
 NeoBundle 'stephpy/vim-php-cs-fixer'
+NeoBundle 'soh335/vim-symfony'
 
 NeoBundle 'SrcExpl'
 NeoBundle 'Trinity'
 NeoBundle 'taglist.vim'
 
+NeoBundle 'ciaranm/inkpot'
 
 filetype plugin indent on     " required!
 
