@@ -58,6 +58,10 @@ endif
 " plugin
 
 "--------------------------------------------------
+" ack.vim
+nnoremap <C-g><C-a> :Ack<Space><C-r><C-w><Enter>
+
+"--------------------------------------------------
 " vim-php-cs-fixer
 let g:php_cs_fixer_path = "~/bin/php-cs-fixer.phar"
 
