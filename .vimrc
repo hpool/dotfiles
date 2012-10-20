@@ -19,6 +19,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'soh335/vim-symfony'
 NeoBundle 'grep.vim'
 NeoBundle 'kien/ctrlp.vim'
@@ -101,6 +102,10 @@ let g:ctrlp_map = ',p'
 "let g:miniBufExplModSelTarget = 1
 "let g:miniBufExplSplitToEdge = 1
 
+
+"--------------------------------------------------
+" neosnippet
+imap <C-s>  <Plug>(neocomplcache_start_unite_snippet)
 
 "--------------------------------------------------
 " SrcExpl.vim
