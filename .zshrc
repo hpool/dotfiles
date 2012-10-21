@@ -25,6 +25,14 @@ if [ -f ~/.zsh/auto-fu.zsh ]; then
     }
     zle -N zle-line-init
     zstyle ':auto-fu:var' postdisplay $''
+
+    ## Enterを押したときは自動補完された部分を利用しない。
+    afu+cancel-and-accept-line() {
+        ((afu_in_p == 1)) && { afu_in_p=0; BUFFER="$buffer_cur" }
+        zle afu+accept-line
+    }
+    zle -N afu+cancel-and-accept-line
+    bindkey -M afu "^M" afu+cancel-and-accept-line
 fi
 
 
