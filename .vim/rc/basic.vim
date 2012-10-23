@@ -22,7 +22,7 @@ set statusline=%<%f\%m%r%h%w%=%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}%3l,%3v%4
 set grepprg=grep\ -rnIH\ $*\ /dev/null
 
 set nowildmenu
-set wildmode=list:full
+set wildmode=longest:list,full
 
 set backspace=2
 set nolist
