@@ -1,3 +1,4 @@
-.vim/plugin/color.vim
+.vim/rc/color.vim
+.vim/rc/local.vim
 .vim/.netrwhist
 .vim/bundle

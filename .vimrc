@@ -44,17 +44,17 @@ if neobundle#exists_not_installed_bundles()
   "finish
 endif
 
-" .vim/plugin/basic.vim
-" .vim/plugin/local.vim
-" .vim/plugin/mappings.vim
-if filereadable(expand('~/.vim/plugin/basic.vim'))
-  source ~/.vim/plugin/basic.vim
+" .vim/rc/basic.vim
+" .vim/rc/local.vim
+" .vim/rc/mappings.vim
+if filereadable(expand('~/.vim/rc/basic.vim'))
+  source ~/.vim/rc/basic.vim
 endif
-if filereadable(expand('~/.vim/plugin/local.vim'))
-  source ~/.vim/plugin/local.vim
+if filereadable(expand('~/.vim/rc/local.vim'))
+  source ~/.vim/rc/local.vim
 endif
-if filereadable(expand('~/.vim/plugin/mappings.vim'))
-  source ~/.vim/plugin/mappings.vim
+if filereadable(expand('~/.vim/rc/mappings.vim'))
+  source ~/.vim/rc/mappings.vim
 endif
 
 
