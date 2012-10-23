@@ -3,8 +3,8 @@
 "
 " ~/.vimrc
 
-if filereadable(expand('~/.vim/color.vimrc'))
-  source ~/.vim/color.vimrc
+if filereadable(expand('~/.vim/plugin/color.vim'))
+  source ~/.vim/plugin/color.vim
   "set t_Co=256
   "colorscheme inkpot
 endif
