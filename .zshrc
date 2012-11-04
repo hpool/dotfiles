@@ -141,6 +141,7 @@ alias ll='ls -la'
 alias grep='grep --color'
 alias sudo='sudo '
 alias bd="popd"
+alias g='git'
 
 alias L="| $PAGER"
 alias G="| grep"
