@@ -28,6 +28,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/vimshell'
 NeoBundle 'kien/ctrlp.vim'
 
 NeoBundle 'php.vim--Garvin'
@@ -67,6 +68,9 @@ endif
 
 
 " plugin
+"--------------------------------------------------
+" vimshell
+nnoremap <silent> ,sh :VimShell<CR>
 
 "--------------------------------------------------
 " vimfiler
