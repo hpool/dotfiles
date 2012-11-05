@@ -27,6 +27,7 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/vimfiler'
 NeoBundle 'kien/ctrlp.vim'
 
 NeoBundle 'php.vim--Garvin'
@@ -66,6 +67,11 @@ endif
 
 
 " plugin
+
+"--------------------------------------------------
+" vimfiler
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default = 0
 
 "--------------------------------------------------
 " ack.vim
