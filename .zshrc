@@ -151,6 +151,7 @@ if [ -x "`which vim 2>/dev/null`" ]; then
   alias vi='vim'
 fi
 
+REPORTTIME=3
 
 # MySQL
 if [ -x "`which rlwrap 2>/dev/null`" ]; then
