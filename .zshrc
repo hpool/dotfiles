@@ -329,3 +329,8 @@ if [[ -f "~/.git-completion.sh" ]]; then
   source ~/.git-completion.sh
 fi
 
+if [[ -d ~/.rbenv/ ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
