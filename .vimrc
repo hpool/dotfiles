@@ -186,7 +186,7 @@ autocmd FileType php,html let b:surround_100 = "<div>\r</div>" " d : <div>|</div
 
 "--------------------------------------------------
 " unite.vim
-let g:unite_enable_start_insert = 0
+let g:unite_enable_start_insert = 1
 
 noremap ,ud :UniteWithBufferDir file -buffer-name=file<CR>
 noremap ,uf :Unite -buffer-name=file file<CR>
