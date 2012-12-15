@@ -35,6 +35,8 @@ NeoBundle 'php.vim--Garvin'
 NeoBundle 'stephpy/vim-php-cs-fixer'
 NeoBundle 'soh335/vim-symfony'
 
+NeoBundle 'derekwyatt/vim-scala'
+
 NeoBundle 'SrcExpl'
 NeoBundle 'Trinity'
 NeoBundle 'taglist.vim'
@@ -228,7 +230,9 @@ let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Define dictionary.
-"let g:neocomplcache_dictionary_filetype_lists = {
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'scala' : $HOME.'/.vim/dict/scala.dict'
+    \ }
 "    \ 'default' : '',
 "    \ 'vimshell' : $HOME.'/.vimshell_hist',
 "    \ 'scheme' : $HOME.'/.gosh_completions'
