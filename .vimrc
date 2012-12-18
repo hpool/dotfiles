@@ -178,6 +178,7 @@ autocmd FileType php,html let b:surround_100 = "<div>\r</div>" " d : <div>|</div
 "--------------------------------------------------
 " unite.vim
 let g:unite_enable_start_insert = 1
+let g:unite_split_rule = "botright"
 
 noremap ,ud :UniteWithBufferDir file -buffer-name=file<CR>
 noremap ,uf :Unite -buffer-name=file file<CR>
@@ -187,6 +188,7 @@ noremap ,uc :UniteWithCurrentDir file_mru<CR>
 noremap ,uk :Unite bookmark<CR>
 noremap ,ur :Unite -buffer-name=register register<CR>
 noremap ,uo :Unite outline<CR>
+noremap ,uO :<C-u>Unite -vertical -no-quit -no-start-insert -no-focus outline<CR>
 
 " ESCキーを2回押すと終了する
 autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
