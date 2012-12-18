@@ -3,6 +3,9 @@
 "
 " ~/.vimrc
 
+" 選択してCtrl-pでpaste
+vnoremap <silent> <C-p> "0p
+
 " Insertモード時にCtrl+Bでカーソル上の一文字削除
 imap <C-B> <C-O>x
 
