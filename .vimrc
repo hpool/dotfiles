@@ -33,6 +33,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimshell'
+NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'kien/ctrlp.vim'
 
 NeoBundle 'php.vim--Garvin'
@@ -194,6 +195,11 @@ noremap ,uO :<C-u>Unite -vertical -no-quit -no-start-insert -no-focus outline<CR
 autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 autocmd FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+
+autocmd BufEnter *
+    \   if empty(&buftype)
+    \|      nnoremap <buffer> g<C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
+    \|  endif
 
 "--------------------------------------------------
 " vim-ref
