@@ -42,6 +42,7 @@ NeoBundle 'soh335/vim-symfony'
 
 NeoBundle 'derekwyatt/vim-scala'
 
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'SrcExpl'
 NeoBundle 'Trinity'
 NeoBundle 'taglist.vim'
