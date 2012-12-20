@@ -36,6 +36,7 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'kmnk/vim-unite-giti'
 
 NeoBundle 'php.vim--Garvin'
 NeoBundle 'stephpy/vim-php-cs-fixer'
