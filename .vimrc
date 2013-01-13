@@ -1,7 +1,3 @@
-" .vim/after/basic.vim
-" .vim/after/local.vim
-" .vim/after/mappings.vim
-
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -59,6 +55,18 @@ if neobundle#exists_not_installed_bundles()
         \ string(neobundle#get_not_installed_bundle_names())
   echomsg 'Please execute ":NeoBundleInstall" command.'
   "finish
+endif
+
+" .vim/rc/basic.vim
+" .vim/rc/mappings.vim
+" .vim/after/plugin/local.vim
+
+if filereadable(expand('~/.vim/rc/basic.vim'))
+  source .vim/rc/basic.vim
+endif
+
+if filereadable(expand('~/.vim/rc/mappings.vim'))
+  source .vim/rc/mappings.vim
 endif
 
 
