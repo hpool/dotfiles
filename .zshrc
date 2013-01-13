@@ -221,18 +221,31 @@ kterm*|xterm*)
 esac
 
 
-# ssh
-function ssh_screen(){
-    eval server=\${$#}
-    screen -t $server ssh "$@"
-}
+if [ x$TERM = xscreen -o $TERM = "xterm-256color" -o "$TERM" = "screen-256color" ]; then
+    if [ x"$TMUX" = x ]; then
+        function ssh_screen(){
+            eval server=\${$#}
+            screen -t $server ssh "$@"
+        }
 
-if [ x$TERM = xscreen -o $TERM = "xterm-256color" ]; then
-  alias ssh=ssh_screen
+        alias ssh=ssh_screen
+    else
+        function man_tmux() {
+            eval server=\${$#}
+            tmux split-window "exec man $@"
+        }
+        alias man=man_tmux
+
+        function ssh_tmux() {
+            eval server=\${$#}
+            tmux new-window -n $@ "exec ssh $@"
+        }
+        alias ssh=ssh_tmux
+    fi
 fi
 
 
-if [ "$TERM" = xscreen -o "$TERM" = "xterm-256color" ]; then
+if [ "$TERM" = xscreen -o "$TERM" = "xterm-256color" -o "$TERM" = "screen-256color" ]; then
     chpwd () { echo -n "_`dirs`\\" && ll }
     preexec() {
         # see [zsh-workers:13180]
