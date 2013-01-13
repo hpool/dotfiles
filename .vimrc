@@ -62,11 +62,11 @@ endif
 " .vim/after/plugin/local.vim
 
 if filereadable(expand('~/.vim/rc/basic.vim'))
-  source .vim/rc/basic.vim
+  source ~/.vim/rc/basic.vim
 endif
 
 if filereadable(expand('~/.vim/rc/mappings.vim'))
-  source .vim/rc/mappings.vim
+  source ~/.vim/rc/mappings.vim
 endif
 
 
