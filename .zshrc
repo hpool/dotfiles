@@ -131,12 +131,6 @@ elif [ -x "`which vi 2>/dev/null`" ]; then
     export EDITOR=vi
 fi
 
-if [ `uname` = "Linux" ]; then
-    alias ls='ls --color=auto'
-else
-    alias ls='ls -FG'
-fi
-
 alias ll='ls -la'
 alias grep='grep --color'
 alias sudo='sudo '
@@ -205,6 +199,17 @@ cons25)
         'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
     ;;
 esac
+
+if [ `uname` = "FreeBSD" ]; then
+    export TERM=xterm-256color
+fi
+
+if [ `uname` = "Linux" ]; then
+    alias ls='ls --color=auto'
+else
+    export LSCOLORS=gxfxcxdxbxegedabagacad
+    alias ls='ls -FG'
+fi
 
 # set terminal title including current directory
 #
