@@ -104,10 +104,10 @@ endif
 
 
 " 全角スペース/行末スペースをハイライト
-if has("syntax") && !(has('mac') && has('gui'))
+if has("syntax")
     function! ActivateInvisibleIndicator()
         syntax match InvisibleJISX0208Space "　" display containedin=ALL
-        highlight InvisibleJISX0208Space cterm=underline ctermfg=lightblue guibg=white
+        highlight InvisibleJISX0208Space cterm=underline ctermfg=lightblue gui=underline guifg=lightblue
     endf
     function! ActivateWhitespaceEOL()
         syntax match WhitespaceEOL /\s\+$/ display containedin=ALL
