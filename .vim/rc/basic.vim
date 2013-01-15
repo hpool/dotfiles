@@ -105,19 +105,13 @@ endif
 
 " 全角スペース/行末スペースをハイライト
 if has("syntax")
-    function! ActivateInvisibleIndicator()
-        syntax match InvisibleJISX0208Space "　" display containedin=ALL
-        highlight InvisibleJISX0208Space cterm=underline ctermfg=lightblue gui=underline guifg=lightblue
-    endf
-    function! ActivateWhitespaceEOL()
-        syntax match WhitespaceEOL /\s\+$/ display containedin=ALL
-        highlight WhitespaceEOL ctermbg=red guibg=red
-    endf
-    augroup invisible
-        autocmd! invisible
-        autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
-        autocmd BufNew,BufRead * call ActivateWhitespaceEOL()
-    augroup END
+  augroup HighlightSpaces
+    autocmd!
+    autocmd BufNew,BufRead * highlight WhitespaceEOL guibg=red ctermbg=red
+    autocmd BufNew,BufRead * syntax match WhitespaceEOL /\s\+$/
+    autocmd BufNew,BufRead * highlight JISX0208Space cterm=underline guifg=lightblue ctermfg=lightblue
+    autocmd BufNew,BufRead * syntax match JISX0208Space "　"
+  augroup END
 endif
 
 " SpecialKey
