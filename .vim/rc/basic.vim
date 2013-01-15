@@ -108,9 +108,6 @@ if has("syntax") && !(has('mac') && has('gui'))
     function! ActivateInvisibleIndicator()
         syntax match InvisibleJISX0208Space "　" display containedin=ALL
         highlight InvisibleJISX0208Space cterm=underline ctermfg=lightblue guibg=white
-
-        syntax match WhitespaceEOL /\s\+$/ display containedin=ALL
-        highlight WhitespaceEOL ctermbg=red guibg=red
     endf
     function! ActivateWhitespaceEOL()
         syntax match WhitespaceEOL /\s\+$/ display containedin=ALL
