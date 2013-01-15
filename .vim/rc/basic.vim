@@ -103,26 +103,30 @@ if has('autocmd')
 endif
 
 
-" 全角スペースをハイライト
+" 全角スペース/行末スペースをハイライト
 if has("syntax") && !(has('mac') && has('gui'))
     function! ActivateInvisibleIndicator()
         syntax match InvisibleJISX0208Space "　" display containedin=ALL
         highlight InvisibleJISX0208Space cterm=underline ctermfg=lightblue guibg=white
+
+        syntax match WhitespaceEOL /\s\+$/ display containedin=ALL
+        highlight WhitespaceEOL ctermbg=red guibg=red
+    endf
+    function! ActivateWhitespaceEOL()
+        syntax match WhitespaceEOL /\s\+$/ display containedin=ALL
+        highlight WhitespaceEOL ctermbg=red guibg=red
     endf
     augroup invisible
         autocmd! invisible
         autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
+        autocmd BufNew,BufRead * call ActivateWhitespaceEOL()
     augroup END
 endif
-
-" 行末のスペースをハイライト
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
 
 " SpecialKey
 highlight SpecialKey guibg=#222222 cterm=underline ctermfg=darkgrey
 set list
-set listchars=tab:>-,extends:<,trail:\ 
+set listchars=tab:>-,extends:<
 
 
 " Insertモード時にStatus Lineの色を変える
