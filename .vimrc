@@ -57,6 +57,7 @@ if neobundle#exists_not_installed_bundles()
   "finish
 endif
 
+" .vim/rc/color.vim
 " .vim/rc/basic.vim
 " .vim/rc/mappings.vim
 " .vim/after/plugin/local.vim
