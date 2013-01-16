@@ -54,6 +54,7 @@ setopt auto_cd
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt always_last_prompt
+setopt transient_rprompt
 setopt auto_resume
 setopt ignore_eof
 #setopt transient_rprompt
