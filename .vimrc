@@ -59,16 +59,13 @@ endif
 
 " .vim/rc/color.vim
 " .vim/rc/basic.vim
-" .vim/rc/mappings.vim
+" .vim/after/plugin/mappings.vim
 " .vim/after/plugin/local.vim
 
 if filereadable(expand('~/.vim/rc/basic.vim'))
   source ~/.vim/rc/basic.vim
 endif
 
-if filereadable(expand('~/.vim/rc/mappings.vim'))
-  source ~/.vim/rc/mappings.vim
-endif
 
 
 " plugin
