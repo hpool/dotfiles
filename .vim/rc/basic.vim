@@ -105,12 +105,12 @@ endif
 
 " 全角スペース/行末スペースをハイライト
 if has("syntax")
+  highlight WhitespaceEOL gui=underline guifg=red guibg=red cterm=underline ctermfg=red ctermbg=red
+  highlight JISX0208Space gui=underline guifg=lightblue cterm=underline ctermfg=lightblue
   augroup HighlightSpaces
     autocmd!
-    autocmd VimEnter,ColorScheme * highlight WhitespaceEOL gui=underline guifg=red guibg=red cterm=underline ctermfg=red ctermbg=red
-    autocmd VimEnter,WinEnter,BufNew,BufRead * syntax match WhitespaceEOL /\s\+$/
-    autocmd VimEnter,ColorScheme * highlight JISX0208Space gui=underline guifg=lightblue cterm=underline ctermfg=lightblue
-    autocmd VimEnter,WinEnter,BufNew,BufRead * syntax match JISX0208Space "　"
+    autocmd VimEnter,WinEnter,BufNew,BufRead * match WhitespaceEOL /\s\+$/
+    autocmd VimEnter,WinEnter,BufNew,BufRead * call matchadd("JISX0208Space", "　")
   augroup END
 endif
 
