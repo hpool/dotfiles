@@ -107,7 +107,7 @@ endif
 if has("syntax")
   augroup HighlightSpaces
     autocmd!
-    autocmd BufNew,BufRead * highlight WhitespaceEOL guibg=red ctermbg=red cterm=underline ctermfg=red
+    autocmd BufNew,BufRead * highlight WhitespaceEOL guibg=red guifg=red gui=underline ctermbg=red cterm=underline ctermfg=red
     autocmd BufNew,BufRead * syntax match WhitespaceEOL /\s\+$/
     autocmd BufNew,BufRead * highlight JISX0208Space cterm=underline guifg=lightblue ctermfg=lightblue
     autocmd BufNew,BufRead * syntax match JISX0208Space "　"
