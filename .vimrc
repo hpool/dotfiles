@@ -2,6 +2,8 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 if has('vim_starting')
+  " mkdir -p ~/.vim/bundle
+  " git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
