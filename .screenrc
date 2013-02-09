@@ -4,7 +4,6 @@ escape ^Tt
 bind c screen 1
 bind ^c screen 1
 bind 0 select 10
-screen 1
 
 defbce on
 # bold = luminous color
@@ -23,3 +22,5 @@ hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
 termcapinfo xterm-256color 'is=^[r^[m^[2J^[H^[?7h^[?1;4;6l'
 
 chdir
+
+screen 1
