@@ -40,6 +40,8 @@ NeoBundle 'stephpy/vim-php-cs-fixer'
 NeoBundle 'soh335/vim-symfony'
 
 NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'dag/vim2hs'
+NeoBundle 'eagletmt/ghcmod-vim'
 
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'SrcExpl'
