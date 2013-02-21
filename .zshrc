@@ -120,59 +120,27 @@ fi
 export MYSQL_PS1='\u@\h:\d> '
 
 
-# Enable compsys completion.
-autoload -U compinit
-compinit
-
-zstyle ':completion:*' menu select
-zstyle ':completion:*' format '%B%d%b'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle ':completion:*' keep-prefix
-zstyle ':completion:*' completer \
-    _oldlist _complete _match _history _ignored _approximate _prefix
-
-#####################
-# auto-fu.zsh
-# https://github.com/hchbaw/auto-fu.zsh
-if [ -f ~/.zsh/auto-fu.zsh ]; then
-    source ~/.zsh/auto-fu.zsh
-    function zle-line-init () {
-        auto-fu-init
-    }
-    zle -N zle-line-init
-    zstyle ':auto-fu:var' postdisplay $''
-
-    ## Enterを押したときは自動補完された部分を利用しない。
-    afu+cancel-and-accept-line() {
-        ((afu_in_p == 1)) && { afu_in_p=0; BUFFER="$buffer_cur" }
-        zle afu+accept-line
-    }
-    zle -N afu+cancel-and-accept-line
-    bindkey -M afu "^M" afu+cancel-and-accept-line
-fi
-
-
 # dabbrev
-HARDCOPYFILE=$HOME/tmp/screen-hardcopy
+HARDCOPYFILE=$HOME/.screen-hardcopy
 touch $HARDCOPYFILE
 
 dabbrev-complete () {
-        local reply lines=80 # 80line
-        screen -X eval "hardcopy -h $HARDCOPYFILE"
-        reply=($(sed '/^$/d' $HARDCOPYFILE | sed '$ d' | tail -$lines))
-        compadd - "${reply[@]%[*/=@|]}"
+    local reply lines=80 # 80line
+    screen -X eval "hardcopy -h $HARDCOPYFILE"
+    reply=($(sed '/^$/d' $HARDCOPYFILE | sed '$ d' | tail -$lines))
+    compadd - "${reply[@]%[*/=@|]}"
 }
 
 zle -C dabbrev-complete menu-complete dabbrev-complete
-bindkey '^o' dabbrev-complete
-bindkey '^o^_' reverse-menu-complete
+bindkey '^@' dabbrev-complete
+bindkey '^@^_' reverse-menu-complete
 
 
+# cdup
 function cdup(){
- echo
- cd ..
- zle reset-prompt
+    echo
+    cd ..
+    zle reset-prompt
 }
 zle -N cdup
 bindkey '\^' cdup
@@ -345,6 +313,39 @@ fi
 if [[ -f "~/.git-completion.sh" ]]; then
   source ~/.git-completion.sh
 fi
+
+# Enable compsys completion.
+autoload -U compinit
+compinit
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' keep-prefix
+zstyle ':completion:*' completer \
+    _oldlist _complete _match _history _ignored _approximate _prefix
+
+#####################
+# auto-fu.zsh
+# https://github.com/hchbaw/auto-fu.zsh
+if [ -f ~/.zsh/auto-fu.zsh ]; then
+    source ~/.zsh/auto-fu.zsh
+    function zle-line-init () {
+        auto-fu-init
+    }
+    zle -N zle-line-init
+    zstyle ':auto-fu:var' postdisplay $''
+
+    ## Enterを押したときは自動補完された部分を利用しない。
+    afu+cancel-and-accept-line() {
+        ((afu_in_p == 1)) && { afu_in_p=0; BUFFER="$buffer_cur" }
+        zle afu+accept-line
+    }
+    zle -N afu+cancel-and-accept-line
+    bindkey -M afu "^M" afu+cancel-and-accept-line
+fi
+
 
 if [[ -d ~/.rbenv/ ]]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
