@@ -124,13 +124,20 @@ export MYSQL_PS1='\u@\h:\d> '
 HARDCOPYFILE=$HOME/.screen-hardcopy
 touch $HARDCOPYFILE
 
-dabbrev-complete () {
-    local reply lines=80 # 80line
-    screen -X eval "hardcopy -h $HARDCOPYFILE"
-    reply=($(sed '/^$/d' $HARDCOPYFILE | sed '$ d' | tail -$lines))
-    compadd - "${reply[@]%[*/=@|]}"
-}
-
+if [ x"$TMUX" = x ]; then
+    function dabbrev-complete () {
+        local reply lines=80 # 80line
+        screen -X eval "hardcopy -h $HARDCOPYFILE"
+        reply=($(sed '/^$/d' $HARDCOPYFILE | sed '$ d' | tail -$lines))
+        compadd - "${reply[@]%[*/=@|]}"
+    }
+else
+    function dabbrev-complete () {
+        local sources
+        sources=($(tmux capture-pane \; show-buffer \; delete-buffer | sed '/^$/d' | sed '$ d'))
+        compadd - "${sources[@]%[*/=@|]}"
+    }
+fi
 zle -C dabbrev-complete menu-complete dabbrev-complete
 bindkey '^@' dabbrev-complete
 bindkey '^@^_' reverse-menu-complete
