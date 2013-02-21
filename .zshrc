@@ -3,39 +3,6 @@ bindkey -e
 
 stty stop undef
 
-# Enable compsys completion.
-autoload -U compinit
-compinit
-
-zstyle ':completion:*' menu select
-zstyle ':completion:*' format '%B%d%b'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle ':completion:*' keep-prefix
-zstyle ':completion:*' completer \
-    _oldlist _complete _match _history _ignored _approximate _prefix
-
-#####################
-# auto-fu.zsh
-# https://github.com/hchbaw/auto-fu.zsh
-if [ -f ~/.zsh/auto-fu.zsh ]; then
-    source ~/.zsh/auto-fu.zsh
-    function zle-line-init () {
-        auto-fu-init
-    }
-    zle -N zle-line-init
-    zstyle ':auto-fu:var' postdisplay $''
-
-    ## Enterを押したときは自動補完された部分を利用しない。
-    afu+cancel-and-accept-line() {
-        ((afu_in_p == 1)) && { afu_in_p=0; BUFFER="$buffer_cur" }
-        zle afu+accept-line
-    }
-    zle -N afu+cancel-and-accept-line
-    bindkey -M afu "^M" afu+cancel-and-accept-line
-fi
-
-
 setopt auto_list
 setopt auto_menu
 setopt auto_param_keys
@@ -151,6 +118,39 @@ if [ -x "`which rlwrap 2>/dev/null`" ]; then
   alias mysql='rlwrap -a"Enter password:" -pRED mysql'
 fi
 export MYSQL_PS1='\u@\h:\d> '
+
+
+# Enable compsys completion.
+autoload -U compinit
+compinit
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' keep-prefix
+zstyle ':completion:*' completer \
+    _oldlist _complete _match _history _ignored _approximate _prefix
+
+#####################
+# auto-fu.zsh
+# https://github.com/hchbaw/auto-fu.zsh
+if [ -f ~/.zsh/auto-fu.zsh ]; then
+    source ~/.zsh/auto-fu.zsh
+    function zle-line-init () {
+        auto-fu-init
+    }
+    zle -N zle-line-init
+    zstyle ':auto-fu:var' postdisplay $''
+
+    ## Enterを押したときは自動補完された部分を利用しない。
+    afu+cancel-and-accept-line() {
+        ((afu_in_p == 1)) && { afu_in_p=0; BUFFER="$buffer_cur" }
+        zle afu+accept-line
+    }
+    zle -N afu+cancel-and-accept-line
+    bindkey -M afu "^M" afu+cancel-and-accept-line
+fi
 
 
 # dabbrev
