@@ -203,9 +203,15 @@ noremap ,ur :Unite -buffer-name=register register<CR>
 noremap ,uo :Unite outline<CR>
 noremap ,uO :<C-u>Unite -vertical -no-quit -no-start-insert -no-focus outline<CR>
 
+" ウィンドウを分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+" ウィンドウを縦に分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
 " ESCキーを2回押すと終了する
-autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-autocmd FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 
 autocmd BufEnter *
