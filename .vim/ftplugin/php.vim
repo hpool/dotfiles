@@ -20,6 +20,10 @@ nnoremap <buffer> ,l  :<C-u>execute '!' &l:filetype '-l' shellescape(expand('%')
 :set errorformat=%m\ in\ %f\ on\ line\ %l
 
 let php_sql_query=1
-let php_htmlInStrings=1
+let php_baselib = 1
+let php_htmlInStrings = 1
+let php_noShortTags = 1
+let php_parent_error_close = 1
+let php_parent_error_open = 1
 
 nnoremap <buffer> <F1> :vimgrep /\s*function / %<CR>:cw<CR>
