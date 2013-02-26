@@ -2,6 +2,7 @@
 
 DOTFILES=(
 .ackrc
+.gitconfig
 .gvimrc
 .inputrc
 .screenrc
