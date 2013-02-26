@@ -8,10 +8,6 @@ syntax on
 " ~/.vim/rc/color.vim
 if filereadable(expand('~/.vim/rc/color.vim'))
   source ~/.vim/rc/color.vim
-"set t_Co=256
-"colorscheme inkpot
-"highlight LineNr ctermbg=235 guibg=235
-"highlight CursorLine term=NONE cterm=NONE ctermbg=235 guibg=235
 endif
 
 
