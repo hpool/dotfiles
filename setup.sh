@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 DOTFILES=(
 .ackrc
@@ -19,6 +19,7 @@ setup()
 
 initialize()
 {
+    cd $CURRENT_DIR && git submodule update --init
     for dotfile in ${DOTFILES[@]}
     do
         rm -rf $HOME/$dotfile
@@ -33,5 +34,5 @@ symlink_dotfiles()
     done
 }
 
-CURRENT_DIR=`pwd dirname $0`
+CURRENT_DIR=$(cd $(dirname $0);pwd)
 setup
