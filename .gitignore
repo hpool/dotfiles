@@ -2,3 +2,5 @@
 .vim/after/plugin/local.vim
 .vim/.netrwhist
 .vim/bundle
+.zsh/host-*.zshrc
+
