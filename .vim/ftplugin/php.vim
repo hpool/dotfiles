@@ -28,6 +28,3 @@ let php_parent_error_open = 1
 
 nnoremap <buffer> <F1> :vimgrep /\s*function / %<CR>:cw<CR>
 
-" vim-ref
-" http://www.php.net/get/php_manual_en.tar.gz/from/jp1.php.net/mirror
-let g:ref_phpmanual_path = $HOME . '/.vim/manual/php'

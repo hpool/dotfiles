@@ -222,6 +222,8 @@ autocmd BufEnter *
 
 "--------------------------------------------------
 " vim-ref
+" http://www.php.net/get/php_manual_en.tar.gz/from/jp1.php.net/mirror
+let g:ref_phpmanual_path = $HOME . '/.vim/manual/php'
 noremap rphp :Ref phpmanual 
 noremap rpy :Ref pydoc 
 noremap ra :Ref alc 
