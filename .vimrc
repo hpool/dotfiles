@@ -69,6 +69,7 @@ if filereadable(expand('~/.vim/rc/basic.vim'))
   source ~/.vim/rc/basic.vim
 endif
 
+source $VIMRUNTIME/macros/matchit.vim
 
 
 " plugin
