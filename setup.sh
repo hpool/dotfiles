@@ -9,6 +9,7 @@ DOTFILES=(
 .tmux.conf
 .vim
 .vimrc
+.zsh
 .zshrc
 )
 
