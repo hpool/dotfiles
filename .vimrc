@@ -22,6 +22,7 @@ NeoBundle 'ack.vim'
 NeoBundle 'grep.vim'
 NeoBundle 'YankRing.vim'
 NeoBundle 'buftabs'
+NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'thinca/vim-ref'
@@ -99,6 +100,12 @@ let g:buftabs_only_basename=1
 let g:buftabs_in_statusline=1
 
 "--------------------------------------------------
+" MiniBufExplorer
+let g:miniBufExplSplitBelow = 1
+let g:miniBufExplVSplit = 30
+"let g:miniBufExplorerMoreThanOne = 0
+
+"--------------------------------------------------
 " grep.vim
 " :Gb <args> でGrepBufferする
 command! -nargs=1 GB :GrepBuffer <args>
@@ -115,16 +122,6 @@ let g:yankring_history_file = '.vim_yankring_history'
 "--------------------------------------------------
 " ctrlp
 let g:ctrlp_map = ',p'
-
-"--------------------------------------------------
-" MiniBufExplorer
-"nmap <Space> :MBEbn<CR>
-"let g:miniBufExplMapWindowNavVim = 1
-"let g:miniBufExplSplitBelow = 0
-"let g:miniBufExplMapWindowNavArrows = 1
-"let g:miniBufExplMapCTabSwitchBufs = 1
-"let g:miniBufExplModSelTarget = 1
-"let g:miniBufExplSplitToEdge = 1
 
 
 "--------------------------------------------------
