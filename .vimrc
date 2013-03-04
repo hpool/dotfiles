@@ -22,7 +22,7 @@ NeoBundle 'ack.vim'
 NeoBundle 'grep.vim'
 NeoBundle 'YankRing.vim'
 NeoBundle 'buftabs'
-NeoBundle 'fholgado/minibufexpl.vim'
+"NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'thinca/vim-ref'
@@ -101,8 +101,8 @@ let g:buftabs_in_statusline=1
 
 "--------------------------------------------------
 " MiniBufExplorer
-let g:miniBufExplSplitBelow = 1
-let g:miniBufExplVSplit = 30
+"let g:miniBufExplSplitBelow = 1
+"let g:miniBufExplVSplit = 30
 "let g:miniBufExplorerMoreThanOne = 0
 
 "--------------------------------------------------
