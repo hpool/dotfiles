@@ -1,10 +1,10 @@
 ""
 " PHP Lint
 
-augroup gPHPLint
-    autocmd!
-    autocmd BufWritePost *.php :call PHPLint()
-augroup END
+"augroup gPHPLint
+"    autocmd!
+"    autocmd BufWritePost *.php :call PHPLint()
+"augroup END
 
 function! PHPLint()
   let result = system( &ft . ' -l ' . bufname(""))

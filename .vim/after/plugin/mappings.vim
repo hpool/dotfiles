@@ -35,6 +35,8 @@ autocmd QuickfixCmdPost make,grep,grepadd,vimgrep if len(getqflist()) != 0 | cop
 nmap ,n :cn<CR>
 nmap ,p :cp<CR>
 
+nmap ,ln :lnext<CR>
+nmap ,lp :lprevious<CR>
 
 nmap <silent> <C-l> :bnext<CR>
 nmap <silent> <C-h> :bprevious<CR>

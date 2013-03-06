@@ -34,6 +34,8 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'kien/ctrlp.vim'
 
+NeoBundle 'scrooloose/syntastic'
+
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'airblade/vim-gitgutter'
@@ -76,6 +78,12 @@ source $VIMRUNTIME/macros/matchit.vim
 
 
 " plugin
+"--------------------------------------------------
+" syntastic
+let g:syntastic_auto_loc_list=1
+let g:syntastic_php_checkers=['php', 'phpmd']
+let g:syntastic_php_phpmd_post_args='text codesize,design,unusedcode'
+
 "--------------------------------------------------
 " vimshell
 nnoremap <silent> ,sh :VimShell<CR>
