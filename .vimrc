@@ -101,6 +101,11 @@ nnoremap <C-g><C-a> :Ack<Space><C-r><C-w><Enter>
 " vim-php-cs-fixer
 let g:php_cs_fixer_path = "~/bin/php-cs-fixer.phar"
 
+let g:php_cs_fixer_dry_run = 1                  " Call command with dry-run option
+let g:php_cs_fixer_verbose = 1                  " Return the output of command if 1, else an inline information.
+nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
+
 "--------------------------------------------------
 " buftabs
 " .vim/bundle/buftabs/plugin/buftabs.vim
