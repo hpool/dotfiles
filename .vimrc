@@ -43,6 +43,7 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'php.vim--Garvin'
 NeoBundle 'stephpy/vim-php-cs-fixer'
 NeoBundle 'soh335/vim-symfony'
+NeoBundle 'karakaram/vim-quickrun-phpunit'
 
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'dag/vim2hs'
@@ -77,7 +78,26 @@ endif
 source $VIMRUNTIME/macros/matchit.vim
 
 
+
 " plugin
+"--------------------------------------------------
+" quickrun
+augroup QuickRunPHPUnit
+  autocmd!
+  autocmd BufWinEnter,BufNewFile *Test.php set filetype=php.unit
+augroup END
+
+" 初期化
+let g:quickrun_config = {}
+" PHPUnit
+let g:quickrun_config['php.unit'] = {}
+let g:quickrun_config['php.unit'] = {
+\   'outputter': 'phpunit',
+\   'command': 'phpunit',
+\   'cmdopt': '',
+\   'exec': '%c %o %s',
+\}
+
 "--------------------------------------------------
 " syntastic
 let g:syntastic_auto_loc_list=1
