@@ -28,3 +28,31 @@ let php_parent_error_open = 1
 
 nnoremap <buffer> <F1> :vimgrep /\s*function / %<CR>:cw<CR>
 
+" phpmd
+let g:php_md_path = get(g:, 'php_md_path', 'phpmd')
+let g:php_md_rule_set = get(g:, 'php_md_rule_set', 'unusedcode,design,codesize')
+
+function! PhpmdDirectory()
+    call s:phpmd(expand('%:p:h'))
+endfunction
+
+function! PhpmdFile()
+    call s:phpmd(expand('%:ph'))
+endfunction
+
+function! s:phpmd(path)
+    let command = g:php_md_path.' '.a:path.' text '.g:php_md_rule_set
+    echohl Title | echo command | echohl None
+    let output = system(command)
+    let output_list = split(output, "\n")
+
+    set errorformat=%E%f:%l%m
+    cgetexpr output_list
+    copen
+    redraw!
+endfunction
+
+nnoremap <silent><leader>pmd :call PhpmdDirectory()<CR>
+nnoremap <silent><leader>pmf :call PhpmdFile()<CR>
+
+
