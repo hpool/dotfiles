@@ -16,6 +16,7 @@ set number
 set wrapscan
 set showmatch
 set showmode
+set cmdheight=1
 set laststatus=2
 set showcmd
 set statusline=%<%f\%m%r%h%w%=%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}%3l,%3v%4P
