@@ -101,7 +101,7 @@ let g:quickrun_config['php.unit'] = {
 "--------------------------------------------------
 " syntastic
 let g:syntastic_auto_loc_list=1
-let g:syntastic_php_checkers=['php', 'phpmd']
+let g:syntastic_php_checkers=['php']
 let g:syntastic_php_phpmd_post_args='text codesize,design,unusedcode'
 
 "--------------------------------------------------
