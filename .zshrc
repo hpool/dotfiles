@@ -209,12 +209,6 @@ if [ x$TERM = xscreen -o $TERM = "xterm-256color" -o "$TERM" = "screen-256color"
 
         alias ssh=ssh_screen
     else
-        function man_tmux() {
-            eval server=\${$#}
-            tmux split-window "exec man $@"
-        }
-        alias man=man_tmux
-
         function ssh_tmux() {
             eval server=\${$#}
             tmux new-window -n $@ "exec ssh $@"
