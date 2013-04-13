@@ -97,6 +97,8 @@ elif [ -x "`which vi 2>/dev/null`" ]; then
     export EDITOR=vi
 fi
 
+alias rm='rm -i'
+alias mv='mv -i'
 alias ll='ls -la'
 alias grep='grep --color'
 alias sudo='sudo '
