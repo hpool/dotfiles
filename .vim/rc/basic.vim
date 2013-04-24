@@ -25,6 +25,7 @@ set grepprg=grep\ -rnIH\ $*\ /dev/null
 set nowildmenu
 set wildmode=longest:list,full
 
+set nobackup
 set backspace=2
 set nolist
 set title
