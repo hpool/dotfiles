@@ -39,6 +39,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'gregsexton/gitv'
 
 NeoBundle 'php.vim--Garvin'
 NeoBundle 'stephpy/vim-php-cs-fixer'
@@ -351,3 +352,19 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+
+"--------------------------------------------------
+" gitv
+autocmd FileType git setlocal nofoldenable foldlevel=0
+function! s:toggle_git_folding()
+  if &filetype ==# 'git'
+    setlocal foldenable!
+  endif
+endfunction
+
+autocmd FileType gitv call s:my_gitv_settings()
+function! s:my_gitv_settings()
+  setlocal iskeyword+=/,-,.
+  nnoremap <silent><buffer> C :<C-u>Git checkout <C-r><C-w><CR>
+  nnoremap <silent><buffer> t :<C-u>windo call <SID>toggle_git_folding()<CR>1<C-w>w
+endfunction
