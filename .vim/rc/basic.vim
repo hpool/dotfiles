@@ -41,6 +41,8 @@ set expandtab
 
 set foldlevel=1
 
+set clipboard=unnamed,autoselect
+
 set ignorecase
 set smartcase
 "set nohlsearch
