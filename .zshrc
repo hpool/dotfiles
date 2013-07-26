@@ -105,6 +105,8 @@ alias sudo='sudo '
 alias bd="popd"
 alias g='git'
 
+alias tmux-copy='tmux save-buffer - | pbcopy'
+
 alias L="| $PAGER"
 alias G="| grep"
 alias V="| vim -R -"
@@ -120,7 +122,6 @@ if [ -x "`which rlwrap 2>/dev/null`" ]; then
   alias mysql='rlwrap -a"Enter password:" -pRED mysql'
 fi
 export MYSQL_PS1='\u@\h:\d> '
-
 
 # dabbrev
 HARDCOPYFILE=$HOME/.screen-hardcopy
@@ -258,12 +259,11 @@ if [ "$TERM" = xscreen -o "$TERM" = "xterm-256color" -o "$TERM" = "screen-256col
 fi
 
 
+[ -f $HOME/.zsh/.zshrc.`uname` ] && source $HOME/.zsh/.zshrc.`uname`
 
 # Host zshrc
 h="${HOST%%.*}"
-if [[ -f "$HOME/.zsh/host-$h.zshrc" ]]; then
-    source "$HOME/.zsh/host-$h.zshrc"
-fi
+[ -f "$HOME/.zsh/host-$h.zshrc" ] && source "$HOME/.zsh/host-$h.zshrc"
 
 # rvm
 if [[ -s $HOME/.rvm/scripts/rvm ]]; then

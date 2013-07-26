@@ -1,0 +1,4 @@
+
+if [ -n "$TMUX" ]; then
+  alias pbcopy="reattach-to-user-namespace pbcopy"
+fi
