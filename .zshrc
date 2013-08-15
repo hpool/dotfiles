@@ -329,6 +329,28 @@ zstyle ':completion:*' keep-prefix
 zstyle ':completion:*' completer \
     _oldlist _complete _match _history _ignored _approximate _prefix
 
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
+
+typeset -ga chpwd_functions
+
+
+#####################
+# cdr
+if is-at-least 4.3.11; then
+  autoload -U chpwd_recent_dirs cdr
+  chpwd_functions+=chpwd_recent_dirs
+  zstyle ":chpwd:*" recent-dirs-max 500
+  zstyle ":chpwd:*" recent-dirs-default true
+  zstyle ":completion:*" recent-dirs-insert always
+
+  if [ -f ~/.zsh/zaw/zaw.zsh ]; then
+    source ~/.zsh/zaw/zaw.zsh
+    bindkey '^@' zaw-cdr
+  fi
+fi
+
+
 #####################
 # auto-fu.zsh
 # https://github.com/hchbaw/auto-fu.zsh
