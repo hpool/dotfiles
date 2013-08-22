@@ -137,6 +137,10 @@ let g:syntastic_php_phpmd_post_args='text codesize,design,unusedcode'
 nnoremap <silent> ,sh :VimShell<CR>
 
 "--------------------------------------------------
+" NERDTree
+let g:NERDTreeHijackNetrw = 0
+
+"--------------------------------------------------
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
