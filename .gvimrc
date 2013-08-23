@@ -14,9 +14,13 @@ if has('gui_macvim')
 
     "バックアップファイルを作成しない
     set nobackup
-    set transparency=20
     map gw :macaction selectNextWindow:<CR>
     map gW :macaction selectPreviousWindow:<CR>
+
+    augroup focus_transparency
+      autocmd FocusGained * set transparency=20
+      autocmd FocusLost * set transparency=40
+    augroup END
 
     colorscheme koehler
     hi Visual term=reverse cterm=reverse gui=reverse guibg=grey20
