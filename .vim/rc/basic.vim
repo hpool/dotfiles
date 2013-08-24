@@ -187,7 +187,7 @@ augroup QfAutoCommands
   autocmd!
 
   " Auto-close quickfix window
-  autocmd WinEnter * if (getbufvar(winbufnr(0), '&buftype')) == 'quickfix' | bw | endif
+  autocmd WinEnter * if winnr("$") == 1 && (getbufvar(winbufnr(0), '&buftype')) == 'quickfix' | bw | endif
 augroup END
 
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
