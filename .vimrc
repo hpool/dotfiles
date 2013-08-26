@@ -127,6 +127,10 @@ let g:quickrun_config['php.unit'] = {
 \}
 
 "--------------------------------------------------
+" gitgutter
+let g:gitgutter_realtime = 0
+
+"--------------------------------------------------
 " syntastic
 let g:syntastic_auto_loc_list=1
 let g:syntastic_php_checkers=['php']
