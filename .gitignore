@@ -3,4 +3,5 @@
 .vim/.netrwhist
 .vim/bundle
 .vim/manual
+.vim/.VimballRecord
 .zsh/host-*.zshrc
