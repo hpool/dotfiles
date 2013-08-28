@@ -20,6 +20,7 @@ NeoBundle 'Shougo/vimproc', { 'build' : {
 NeoBundle 'sudo.vim'
 NeoBundle 'ack.vim'
 NeoBundle 'grep.vim'
+NeoBundle 'rking/ag.vim'
 NeoBundle 'YankRing.vim'
 NeoBundle 'hpool/buftabs'
 "NeoBundle 'fholgado/minibufexpl.vim'
