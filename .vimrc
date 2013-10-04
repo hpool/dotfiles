@@ -56,6 +56,9 @@ NeoBundle 'SrcExpl'
 NeoBundle 'Trinity'
 NeoBundle 'taglist.vim'
 
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'vim-scripts/tagbar-phpctags'
+
 NeoBundle 'ciaranm/inkpot'
 
 NeoBundle 'mattn/webapi-vim'
