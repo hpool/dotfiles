@@ -7,3 +7,6 @@
 [submodule ".zsh/zaw"]
 	path = .zsh/zaw
 	url = git://github.com/zsh-users/zaw.git
+[submodule ".zsh/cdd"]
+	path = .zsh/cdd
+	url = https://github.com/m4i/cdd.git

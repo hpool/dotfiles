@@ -222,7 +222,13 @@ fi
 
 
 if [ "$TERM" = xscreen -o "$TERM" = "xterm-256color" -o "$TERM" = "screen-256color" ]; then
-    chpwd () { echo -n "_`dirs`\\" && ll }
+    chpwd () {
+        if [ -z "$CDD_FILE" ]; then
+            _cdd_chpwd
+        fi
+
+        echo -n "_`dirs`\\" && ll
+    }
     preexec() {
         # see [zsh-workers:13180]
         # http://www.zsh.org/mla/workers/2000/msg03993.html
@@ -315,6 +321,11 @@ fi
 # Enable compsys completion.
 autoload -U compinit
 compinit
+
+# cdd
+if [[ -s $HOME/.zsh/cdd/cdd ]]; then
+    . $HOME/.zsh/cdd/cdd
+fi
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' format '%B%d%b'
