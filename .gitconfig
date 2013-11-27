@@ -1,5 +1,5 @@
 [core]
-        pager = lv -c
+        pager = diff-highlight | less
         excludesfile = ~/.gitignore
 [user]
         name = hpool

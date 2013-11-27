@@ -17,6 +17,18 @@ setup()
 {
     initialize
     symlink_dotfiles
+    dl_diff_highlight
+}
+
+dl_diff_highlight()
+{
+    if [ ! -e $HOME/bin/diff-highlight ]; then
+        if [ ! -e $HOME/bin ]; then
+            mkdir $HOME/bin
+        fi
+        wget https://raw.github.com/git/git/master/contrib/diff-highlight/diff-highlight -P $HOME/bin/
+        chmod +x $HOME/bin/diff-highlight
+    fi
 }
 
 initialize()
