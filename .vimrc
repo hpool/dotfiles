@@ -82,6 +82,15 @@ if filereadable(expand('~/.vim/rc/basic.vim'))
   source ~/.vim/rc/basic.vim
 endif
 
+if $GOROOT != ''
+  filetype off
+  filetype plugin indent off
+  set rtp+=$GOROOT/misc/vim
+  exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+  filetype plugin indent on
+  syntax on
+endif
+
 source $VIMRUNTIME/macros/matchit.vim
 
 let s:endpoint = 'http://services.gingersoftware.com/Ginger/correct/json/GingerTheText'
@@ -366,6 +375,7 @@ if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 "let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 
