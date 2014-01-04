@@ -65,6 +65,8 @@ NeoBundle 'ciaranm/inkpot'
 
 NeoBundle 'mattn/webapi-vim'
 
+NeoBundle 'koron/codic-vim'
+
 filetype plugin indent on     " required!
 
 " Installation check.
