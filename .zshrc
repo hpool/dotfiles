@@ -388,6 +388,11 @@ if [[ -d ~/.pyenv/ ]]; then
   eval "$(pyenv init -)"
 fi
 
+if [[ -d ~/.plenv/ ]]; then
+  export PATH="$HOME/.plenv/bin:$PATH"
+  eval "$(plenv init -)"
+fi
+
 if [[ -d ~/.cabal/bin/ ]]; then
   export PATH="$HOME/.cabal/bin:$PATH"
 fi
