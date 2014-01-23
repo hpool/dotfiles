@@ -167,8 +167,12 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
 
 "--------------------------------------------------
-" ack.vim
-nnoremap <C-g><C-a> :Ack<Space><C-r><C-w><Enter>
+" ag.vim
+if executable('ag')
+  nnoremap <C-g><C-a> :Ag<Space><C-r><C-w><Enter>
+elseif executable('ack')
+  nnoremap <C-g><C-a> :Ack<Space><C-r><C-w><Enter>
+endif
 
 "--------------------------------------------------
 " vim-php-cs-fixer
@@ -304,6 +308,22 @@ autocmd BufEnter *
     \   if empty(&buftype)
     \|      nnoremap <buffer> g<C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>
     \|  endif
+
+"   unite grep
+" grep検索
+nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" カーソル位置の単語をgrep検索
+nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" grep検索結果の再呼出
+nnoremap <silent> ,cr  :<C-u>UniteResume search-buffer<CR>
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--line-numbers --nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
 
 "--------------------------------------------------
 " vim-ref
