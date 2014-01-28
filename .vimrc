@@ -52,6 +52,7 @@ NeoBundle 'dag/vim2hs'
     let g:haskell_conceal              = 0
     let g:haskell_conceal_enumerations = 0
 NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'vim-ruby/vim-ruby'
 
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'SrcExpl'
