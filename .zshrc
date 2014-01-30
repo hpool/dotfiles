@@ -377,13 +377,6 @@ if [ -f ~/.zsh/auto-fu.zsh ]; then
     bindkey -M afu "^M" afu+cancel-and-accept-line
 fi
 
-# zsh-notify
-if [ -f ~/.zsh/zsh-notify/notify.plugin.zsh ]; then
-    source ~/.zsh/zsh-notify/notify.plugin.zsh
-    export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
-    #export SYS_NOTIFIER=`which terminal-notifier`
-fi
-
 if [[ -d ~/.rbenv/ ]]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
