@@ -221,50 +221,6 @@ if [ x$TERM = xscreen -o $TERM = "xterm-256color" -o "$TERM" = "screen-256color"
 fi
 
 
-if [ "$TERM" = xscreen -o "$TERM" = "xterm-256color" -o "$TERM" = "screen-256color" ]; then
-    chpwd () {
-        if [ -z "$CDD_FILE" ]; then
-            _cdd_chpwd
-        fi
-
-        echo -n "_`dirs`\\" && ll
-    }
-    preexec() {
-        # see [zsh-workers:13180]
-        # http://www.zsh.org/mla/workers/2000/msg03993.html
-        emulate -L zsh
-        local -a cmd; cmd=(${(z)2})
-        case $cmd[1] in
-            fg)
-                if (( $#cmd == 1 )); then
-                    cmd=(builtin jobs -l %+)
-                else
-                    cmd=(builtin jobs -l $cmd[2])
-                fi
-                ;;
-            %*)
-                cmd=(builtin jobs -l $cmd[1])
-                ;;
-            cd)
-                if (( $#cmd == 2)); then
-                    cmd[1]=$cmd[2]
-                fi
-                ;&
-            *)
-                echo -n "k$cmd[1]:t\\"
-                return
-                ;;
-        esac
-
-        local -A jt; jt=(${(kv)jobtexts})
-        $cmd >>(read num rest
-            cmd=(${(z)${(e):-\$jt$num}})
-            echo -n "k$cmd[1]:t\\") 2>/dev/null
-    }
-    chpwd
-fi
-
-
 [ -f $HOME/.zsh/.zshrc.`uname` ] && source $HOME/.zsh/.zshrc.`uname`
 
 # Host zshrc
@@ -339,6 +295,50 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
 
 typeset -ga chpwd_functions
+
+
+if [ "$TERM" = xscreen -o "$TERM" = "xterm-256color" -o "$TERM" = "screen-256color" ]; then
+    chpwd () {
+        if [ -z "$CDD_FILE" ]; then
+            _cdd_chpwd
+        fi
+
+        echo -n "_`dirs`\\" && ll
+    }
+    preexec() {
+        # see [zsh-workers:13180]
+        # http://www.zsh.org/mla/workers/2000/msg03993.html
+        emulate -L zsh
+        local -a cmd; cmd=(${(z)2})
+        case $cmd[1] in
+            fg)
+                if (( $#cmd == 1 )); then
+                    cmd=(builtin jobs -l %+)
+                else
+                    cmd=(builtin jobs -l $cmd[2])
+                fi
+                ;;
+            %*)
+                cmd=(builtin jobs -l $cmd[1])
+                ;;
+            cd)
+                if (( $#cmd == 2)); then
+                    cmd[1]=$cmd[2]
+                fi
+                ;&
+            *)
+                echo -n "k$cmd[1]:t\\"
+                return
+                ;;
+        esac
+
+        local -A jt; jt=(${(kv)jobtexts})
+        $cmd >>(read num rest
+            cmd=(${(z)${(e):-\$jt$num}})
+            echo -n "k$cmd[1]:t\\") 2>/dev/null
+    }
+    chpwd
+fi
 
 
 #####################
