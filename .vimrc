@@ -134,7 +134,10 @@ augroup QuickRunPHPUnit
 augroup END
 
 " 初期化
-let g:quickrun_config = {}
+let g:quickrun_config = {'*': {'split': '', 'hook/time/enable': '1'}}
+set splitbelow
+set splitright
+
 " PHPUnit
 let g:quickrun_config['php.unit'] = {}
 let g:quickrun_config['php.unit'] = {
