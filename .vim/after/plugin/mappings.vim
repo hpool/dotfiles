@@ -44,8 +44,6 @@ nmap ,lp :lprevious<CR>
 nmap <silent> <C-l> :bnext<CR>
 nmap <silent> <C-h> :bprevious<CR>
 
-nmap ,o :only<CR>
-
 "omnifunction
 imap <C-f> <C-x><C-o>
 
