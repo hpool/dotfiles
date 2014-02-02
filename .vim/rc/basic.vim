@@ -190,6 +190,11 @@ augroup QfAutoCommands
   autocmd WinEnter * if winnr("$") == 1 && (getbufvar(winbufnr(0), '&buftype')) == 'quickfix' | bw | endif
 augroup END
 
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
+
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
