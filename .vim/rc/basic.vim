@@ -49,6 +49,7 @@ set smartcase
 set incsearch
 
 set encoding=utf-8
+set termencoding=utf-8
 set fileencodings=ucs_bom,utf8,ucs-2le,ucs-2
 set fileformats=unix,dos,mac
 
