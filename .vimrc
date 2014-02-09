@@ -284,18 +284,23 @@ autocmd FileType php,html let b:surround_100 = "<div>\r</div>" " d : <div>|</div
 
 "--------------------------------------------------
 " unite.vim
+nnoremap [unite] <Nop>
+nmap ,u [unite]
+
 let g:unite_enable_start_insert = 1
 let g:unite_split_rule = "botright"
+let g:unite_source_file_mru_limit = 50
 
-noremap ,ud :UniteWithBufferDir file -buffer-name=file<CR>
-noremap ,uf :Unite -buffer-name=file file<CR>
-noremap ,ub :Unite buffer_tab<CR>
-noremap ,um :Unite file_mru<CR>
-noremap ,uc :UniteWithCurrentDir file_mru<CR>
-noremap ,uk :Unite bookmark<CR>
-noremap ,ur :Unite -buffer-name=register register<CR>
-noremap ,uo :Unite outline<CR>
-noremap ,uO :<C-u>Unite -vertical -no-quit -no-start-insert -no-focus outline<CR>
+nnoremap <silent> [unite]d :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
+nnoremap <silent> [unite]f :<C-u>Unite -buffer-name=file file<CR>
+nnoremap <silent> [unite]b :<C-u>Unite buffer_tab<CR>
+nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+nnoremap <silent> [unite]c :<C-u>UniteWithCurrentDir file_mru<CR>
+nnoremap <silent> [unite]k :<C-u>Unite bookmark<CR>
+nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
+nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> [unite]o :<C-u>Unite -vertical -no-quit -winwidth=50 outline<CR>
+nnoremap <silent> [unite]O :<C-u>Unite outline<CR>
 
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
