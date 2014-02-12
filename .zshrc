@@ -79,7 +79,6 @@ setopt PROMPT_SUBST
 
 
 #PAGER
-alias less="less -MN"
 if [ -x "`which lv 2>/dev/null`" ]; then
     alias lv="lv -c"
     export PAGER=lv
