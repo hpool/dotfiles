@@ -41,6 +41,10 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'airblade/vim-gitgutter'
+if !exists('*gettabvar')
+    let g:gitgutter_eager = 0
+endif
+
 NeoBundle 'gregsexton/gitv'
 
 NeoBundle 'php.vim--Garvin'
