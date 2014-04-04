@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES=(
+DOTFILES="
 .ackrc
 .gitconfig
 .gvimrc
@@ -11,7 +11,7 @@ DOTFILES=(
 .vimrc
 .zsh
 .zshrc
-)
+"
 
 setup()
 {
@@ -34,7 +34,7 @@ dl_diff_highlight()
 initialize()
 {
     cd $CURRENT_DIR && git submodule update --init
-    for dotfile in ${DOTFILES[@]}
+    for dotfile in $DOTFILES
     do
         rm -rf $HOME/$dotfile
     done
@@ -42,7 +42,7 @@ initialize()
 
 symlink_dotfiles()
 {
-    for dotfile in ${DOTFILES[@]}
+    for dotfile in $DOTFILES
     do
         ln -sf $CURRENT_DIR/$dotfile $HOME/$dotfile
     done
