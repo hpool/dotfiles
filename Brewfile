@@ -44,7 +44,7 @@ cask install google-chrome-canary
 cask install google-japanese-ime
 cask install google-notifier
 cask install hyperswitch
-cask install iterm2
+cask install iterm2-beta
 cask install keyremap4macbook
 cask install libreoffice
 cask install skype
