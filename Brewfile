@@ -35,6 +35,7 @@ install brew-cask
 tap caskroom/versions
 
 # インストール
+cask install dash
 cask install dropbox
 cask install firefox
 cask install macvim-kaoriya
