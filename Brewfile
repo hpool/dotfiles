@@ -40,6 +40,7 @@ cask install firefox
 cask install macvim-kaoriya
 cask install google-chrome
 cask install google-chrome-canary
+cask install google-japanese-ime
 cask install google-notifier
 cask install hyperswitch
 cask install iterm2
