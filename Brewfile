@@ -25,6 +25,9 @@ install zsh
 tap homebrew/binary
 install packer
 
+tap laurent22/massren
+install massren
+
 # homebrew-caskのインストール
 tap phinze/homebrew-cask
 install brew-cask
