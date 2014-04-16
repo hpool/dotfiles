@@ -107,9 +107,9 @@ alias g='git'
 
 alias tmux-copy='tmux save-buffer - | pbcopy'
 
-alias L="| $PAGER"
-alias G="| grep"
-alias V="| vim -R -"
+alias -g L="| $PAGER"
+alias -g G="| grep"
+alias -g V="| vim -R -"
 
 if [ -x "`which vim 2>/dev/null`" ]; then
   alias vi='vim'
