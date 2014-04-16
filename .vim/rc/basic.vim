@@ -45,7 +45,7 @@ set clipboard=unnamed,autoselect
 
 set ignorecase
 set smartcase
-"set nohlsearch
+set hlsearch
 set incsearch
 
 set encoding=utf-8
