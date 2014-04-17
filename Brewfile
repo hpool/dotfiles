@@ -21,6 +21,7 @@ install wget
 install w3m
 install xz
 install zsh
+install the_silver_searcher
 
 tap homebrew/binary
 install packer
