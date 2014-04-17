@@ -214,7 +214,8 @@ if [ x$TERM = xscreen -o $TERM = "xterm-256color" -o "$TERM" = "screen-256color"
     else
         function ssh_tmux() {
             eval server=\${$#}
-            tmux new-window -n $@ "exec ssh $@"
+            SSH_CMD="exec ssh $@"
+            tmux new-window -n $server \"\"$SSH_CMD\"\"
         }
         alias ssh=ssh_tmux
     fi
