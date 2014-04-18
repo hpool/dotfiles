@@ -2,6 +2,7 @@
 if has('gui_macvim')
     set antialias
 
+    set visualbell
     set columns=100
     set fuopt+=maxhorz   " フルスクリーン時に横幅を最大にする
 
