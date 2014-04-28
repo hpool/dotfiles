@@ -7,6 +7,16 @@ setup()
     dl_diff_highlight
 }
 
+setup_mac()
+{
+    if [ ! -e $HOME/.vimperatorrc ]; then
+        echo source! $HOME/.vimperatorrc.local > $HOME/.vimperatorrc
+    fi
+    if [ ! -e $HOME/.vimperatorrc.local ]; then
+        touch $HOME/.vimperatorrc.local
+    fi
+}
+
 dl_diff_highlight()
 {
     if [ ! -e $HOME/bin/diff-highlight ]; then
@@ -37,4 +47,7 @@ symlink_files()
 
 CURRENT_DIR=$(cd $(dirname $0);pwd)
 setup
+if [ `uname` = "Darwin" ]; then
+    setup_mac
+fi
 
