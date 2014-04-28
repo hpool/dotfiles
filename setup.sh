@@ -1,22 +1,9 @@
 #!/bin/sh
 
-DOTFILES="
-.ackrc
-.gitconfig
-.gvimrc
-.inputrc
-.screenrc
-.tmux.conf
-.vim
-.vimrc
-.zsh
-.zshrc
-"
-
 setup()
 {
     initialize
-    symlink_dotfiles
+    symlink_files $CURRENT_DIR/setup-symlink.conf
     dl_diff_highlight
 }
 
@@ -34,19 +21,20 @@ dl_diff_highlight()
 initialize()
 {
     cd $CURRENT_DIR && git submodule update --init
-    for dotfile in $DOTFILES
-    do
-        rm -rf $HOME/$dotfile
-    done
 }
 
-symlink_dotfiles()
+symlink_files()
 {
-    for dotfile in $DOTFILES
+    while read FILE
     do
-        ln -sf $CURRENT_DIR/$dotfile $HOME/$dotfile
-    done
+        if [ -e $HOME/$FILE ]; then
+            echo rm -rf $HOME/$FILE
+        fi
+        echo ln -sf $CURRENT_DIR/$FILE $HOME/$FILE
+    done < $1
 }
+
 
 CURRENT_DIR=$(cd $(dirname $0);pwd)
 setup
+
