@@ -38,9 +38,9 @@ symlink_files()
     while read FILE
     do
         if [ -e $HOME/$FILE ]; then
-            echo rm -rf $HOME/$FILE
+            rm -rf $HOME/$FILE
         fi
-        echo ln -sf $CURRENT_DIR/$FILE $HOME/$FILE
+        ln -sf $CURRENT_DIR/$FILE $HOME/$FILE
     done < $1
 }
 
