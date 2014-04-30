@@ -4,5 +4,6 @@
 .vim/bundle
 .vim/manual
 .vim/undo
+.vim/view
 .vim/.VimballRecord
 .zsh/host-*.zshrc

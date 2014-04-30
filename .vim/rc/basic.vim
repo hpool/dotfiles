@@ -191,6 +191,10 @@ augroup QfAutoCommands
   autocmd WinEnter * if winnr("$") == 1 && (getbufvar(winbufnr(0), '&buftype')) == 'quickfix' | bw | endif
 augroup END
 
+" カーソル位置を保存
+autocmd BufWinLeave ?* silent mkview
+autocmd BufWinEnter ?* silent loadview
+
 "if has('persistent_undo')
 "  set undodir=~/.vim/undo
 "  set undofile
