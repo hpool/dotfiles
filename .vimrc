@@ -60,6 +60,15 @@ NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'vim-ruby/vim-ruby'
 
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'thinca/vim-template'
+    " テンプレート中に含まれる'<+CURSOR+>'にカーソルを移動
+    autocmd User plugin-template-loaded
+        \   if search('<+CURSOR+>')
+        \ |   silent! execute 'normal! "_da>'
+        \ | endif
+
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'SrcExpl'
 NeoBundle 'Trinity'
