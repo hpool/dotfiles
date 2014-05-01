@@ -399,3 +399,5 @@ fi
 
 # Homebrew
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
