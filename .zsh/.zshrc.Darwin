@@ -14,6 +14,11 @@ fi
 
 export GIT_PAGER="lv -c"
 
+# Homebrew
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+export PATH="$HOME/bin:$PATH"
+
 # pyenv
 export PYENV_ROOT=/usr/local/opt/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
