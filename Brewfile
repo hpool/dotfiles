@@ -54,4 +54,7 @@ cask install virtualbox
 cask install vagrant
 cask install yorufukurou
 
+cask install osxfuse
+cask install sshfs
+
 cleanup
