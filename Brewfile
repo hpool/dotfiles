@@ -12,6 +12,7 @@ install io
 install leiningen
 install lv
 install play
+install pyenv-virtualenv
 install reattach-to-user-namespace
 install sbt
 install scala
