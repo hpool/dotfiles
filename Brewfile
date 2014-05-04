@@ -37,6 +37,7 @@ install brew-cask
 tap caskroom/versions
 
 # インストール
+cask install clamxav
 cask install dash
 cask install dropbox
 cask install firefox
