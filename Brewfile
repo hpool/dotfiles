@@ -50,6 +50,7 @@ cask install hyperswitch
 cask install iterm2-beta
 cask install keyremap4macbook
 cask install libreoffice
+cask install pycharm
 cask install skype
 cask install thunderbird
 cask install virtualbox
