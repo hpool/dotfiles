@@ -398,3 +398,7 @@ if [[ -d ~/.cabal/bin/ ]]; then
 fi
 
 [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
+
+if [ -x "`which direnv 2>/dev/null`" ]; then
+  eval "$(direnv hook zsh)"
+fi

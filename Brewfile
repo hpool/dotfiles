@@ -4,10 +4,12 @@ update
 # Formulaを更新
 upgrade
 
+install direnv
 install erlang
 install git
 install gnu-prolog
 install go
+install hg
 install io
 install leiningen
 install lv
