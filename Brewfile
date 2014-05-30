@@ -44,12 +44,14 @@ cask install dash
 cask install dropbox
 cask install firefox
 cask install macvim-kaoriya
+cask install gimp
 cask install google-chrome
 cask install google-chrome-canary
 cask install google-japanese-ime
 cask install google-notifier
 cask install hyperswitch
 cask install iterm2-beta
+cask install imageoptim
 cask install keyremap4macbook
 cask install libreoffice
 cask install pycharm
