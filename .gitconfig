@@ -24,3 +24,5 @@
 [hooks]
         showrev = "git show -C %s; echo"
         mailinglist = hhpool+git@gmail.com
+[push]
+        default = simple
