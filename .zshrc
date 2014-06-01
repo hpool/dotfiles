@@ -387,6 +387,7 @@ if [[ -d ~/.pyenv/ ]]; then
   export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"
 fi
+export PYTHONSTARTUP=$HOME/.pythonstartup
 
 if [[ -d ~/.plenv/ ]]; then
   export PATH="$HOME/.plenv/bin:$PATH"
