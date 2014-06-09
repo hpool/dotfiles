@@ -8,7 +8,7 @@
         ui = auto
 [alias]
         co = checkout
-        st = status
+        st = status --branch --short
         ci = commit
         di = diff
         dic = diff --cached
