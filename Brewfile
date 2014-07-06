@@ -36,6 +36,7 @@ tap phinze/homebrew-cask
 install brew-cask
 
 tap caskroom/versions
+tap hpool/mycask
 
 # インストール
 cask install clamxav
@@ -54,6 +55,7 @@ cask install imageoptim
 cask install keyremap4macbook
 cask install libreoffice
 cask install pycharm
+#cask install hpool/mycask/pycharm
 cask install skype
 cask install thunderbird
 cask install virtualbox
