@@ -31,6 +31,9 @@ install packer
 tap laurent22/massren
 install massren
 
+tap peco/peco
+install peco
+
 # homebrew-caskのインストール
 tap phinze/homebrew-cask
 install brew-cask
