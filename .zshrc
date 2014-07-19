@@ -382,7 +382,7 @@ fi
 
 #####################
 # peco
-function peco-select-history() {
+function peco-history() {
     local tac
     if which tac > /dev/null; then
         tac="tac"
@@ -396,8 +396,8 @@ function peco-select-history() {
     zle clear-screen
 }
 if which peco > /dev/null; then
-    zle -N peco-select-history
-    bindkey '^r' peco-select-history
+    zle -N peco-history
+    bindkey '^x^r' peco-history
 fi
 
 
