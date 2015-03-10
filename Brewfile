@@ -51,11 +51,11 @@ cask install gimp
 cask install google-chrome
 cask install google-chrome-canary
 cask install google-japanese-ime
-cask install google-notifier
+#cask install google-notifier
 cask install hyperswitch
 cask install iterm2-beta
 cask install imageoptim
-cask install keyremap4macbook
+cask install karabiner
 cask install libreoffice
 cask install pycharm
 #cask install hpool/mycask/pycharm
@@ -63,9 +63,9 @@ cask install skype
 cask install thunderbird
 cask install virtualbox
 cask install vagrant
-cask install yorufukurou
+#cask install yorufukurou
 
-cask install osxfuse
-cask install sshfs
+#cask install osxfuse
+#cask install sshfs
 
 cleanup
