@@ -41,6 +41,8 @@ set expandtab
 
 set foldlevel=1
 
+set noundofile
+
 set clipboard=unnamed,autoselect
 
 set ignorecase
