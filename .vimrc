@@ -64,6 +64,8 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'dgryski/vim-godef'
 NeoBundle 'vim-jp/vim-go-extra'
 
+NeoBundle 'lambdatoast/elm.vim'
+
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'thinca/vim-template'
