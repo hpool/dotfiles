@@ -39,6 +39,10 @@ NeoBundle 'kien/ctrlp.vim'
 
 NeoBundle 'scrooloose/syntastic'
 
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'joker1007/vim-markdown-quote-syntax'
+NeoBundle 'plasticboy/vim-markdown'
+
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'airblade/vim-gitgutter'
