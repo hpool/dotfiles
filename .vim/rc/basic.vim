@@ -12,6 +12,7 @@ endif
 
 
 set autoindent
+set textwidth=0
 set number
 set wrapscan
 set showmatch
