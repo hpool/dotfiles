@@ -418,6 +418,11 @@ if [[ -d ~/.plenv/ ]]; then
   eval "$(plenv init -)"
 fi
 
+if [[ -d ~/.anyenv/ ]]; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
+
 if [[ -d ~/.cabal/bin/ ]]; then
   export PATH="$HOME/.cabal/bin:$PATH"
 fi
