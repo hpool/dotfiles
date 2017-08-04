@@ -23,7 +23,7 @@ dl_diff_highlight()
         if [ ! -e $HOME/bin ]; then
             mkdir $HOME/bin
         fi
-        wget https://raw.github.com/git/git/master/contrib/diff-highlight/diff-highlight -P $HOME/bin/
+        wget https://raw.githubusercontent.com/git/git/v2.13.0/contrib/diff-highlight/diff-highlight -P $HOME/bin/
         chmod +x $HOME/bin/diff-highlight
     fi
 }
