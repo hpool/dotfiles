@@ -17,7 +17,7 @@ brew install io
 brew install jq
 brew install leiningen
 brew install lv
-brew install pyenv-virtualenv
+#brew install anyenv
 brew install readline
 brew install reattach-to-user-namespace
 brew install sbt
@@ -51,27 +51,20 @@ brew tap caskroom/versions
 brew cask install dash
 brew cask install dropbox
 brew cask install firefox
+brew cask install franz
 brew cask install macvim-kaoriya
 brew cask install gimp
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install google-japanese-ime
-#cask install google-notifier
 brew cask install hyperswitch
 brew cask install iterm2-beta
 brew cask install imageoptim
 brew cask install karabiner
 brew cask install libreoffice
 brew cask install pycharm
-#cask install hpool/mycask/pycharm
-brew cask install slack
 brew cask install skype
-#brew cask install thunderbird
 brew cask install virtualbox
 brew cask install vagrant
-#cask install yorufukurou
-
-#cask install osxfuse
-#cask install sshfs
 
 brew cleanup
