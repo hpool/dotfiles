@@ -195,8 +195,15 @@ augroup QfAutoCommands
 augroup END
 
 " カーソル位置を保存
-autocmd BufWinLeave ?* silent mkview
-autocmd BufWinEnter ?* silent loadview
+
+augroup AutoSaveFolds
+  autocmd!
+  " view files are about 500 bytes
+  " bufleave but not bufwinleave captures closing 2nd tab
+  " nested is needed by bufwrite* (if triggered via other autocmd)
+  autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+  autocmd BufWinEnter ?* silent loadview
+augroup end
 
 "if has('persistent_undo')
 "  set undodir=~/.vim/undo
