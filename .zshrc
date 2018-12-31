@@ -432,3 +432,5 @@ fi
 if [ -x "`which direnv 2>/dev/null`" ]; then
   eval "$(direnv hook zsh)"
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

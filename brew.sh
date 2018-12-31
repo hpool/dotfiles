@@ -9,6 +9,8 @@ brew upgrade
 brew install awscli
 brew install direnv
 brew install erlang
+brew install fzf
+$(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
 brew install git
 brew install gnu-prolog
 brew install go
