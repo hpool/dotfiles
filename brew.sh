@@ -21,7 +21,6 @@ brew install leiningen
 brew install lv
 #brew install anyenv
 brew install readline
-brew install reattach-to-user-namespace
 brew install sbt
 brew install scala
 brew install tmux
