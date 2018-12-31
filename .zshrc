@@ -434,3 +434,4 @@ if [ -x "`which direnv 2>/dev/null`" ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag -g ""'
