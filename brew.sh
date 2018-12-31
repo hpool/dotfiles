@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 
 # Homebrewを最新版にアップデート
 brew update
