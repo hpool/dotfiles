@@ -27,3 +27,5 @@
         mailinglist = hhpool+git@gmail.com
 [push]
         default = simple
+[grep]
+        lineNumber = true
