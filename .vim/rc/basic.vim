@@ -20,7 +20,7 @@ set showmode
 set cmdheight=1
 set laststatus=2
 set showcmd
-set statusline=%<%f\%m%r%h%w%=%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}%3l,%3v%4P
+set statusline=%<%f\%m%r%h%w%=%{'['.(&fenc!=''?&fenc:&enc).'/'.&ff.']'}
 set grepprg=grep\ -rnIH\ $*\ /dev/null
 
 set nowildmenu
