@@ -33,5 +33,5 @@ if has('gui_macvim')
     highlight CursorLine term=underline cterm=underline guibg=#333344
     set hi cursorline
 
-    set directory=~/tmp,.,//var/tmp,/tmp
+    set directory=~/tmp/.vim/
 endif

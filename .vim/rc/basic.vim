@@ -42,6 +42,8 @@ set expandtab
 
 set foldlevel=1
 
+set directory=~/tmp/.vim/
+
 set noundofile
 
 set clipboard=unnamed,autoselect
