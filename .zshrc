@@ -26,6 +26,8 @@ setopt auto_resume
 setopt ignore_eof
 #setopt transient_rprompt
 
+#コマンドラインでも # 以降をコメントと見なす
+setopt INTERACTIVE_COMMENTS
 
 # history
 HISTFILE=$HOME/.zsh-history
