@@ -1,8 +1,3 @@
-
-if [ -n "$TMUX" ]; then
-  alias pbcopy="reattach-to-user-namespace pbcopy"
-fi
-
 alias fcd='cd `$HOME/bin/fcd.sh`'
 alias gvim="open -a MacVim"
 alias s="say"
