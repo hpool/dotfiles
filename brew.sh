@@ -37,35 +37,19 @@ brew install packer
 brew tap laurent22/massren
 brew install massren
 
-brew tap peco/peco
-brew install peco
-
-# homebrew-caskのインストール
-brew tap phinze/homebrew-cask
-brew install brew-cask
-
-brew tap caskroom/versions
-#brew tap hpool/mycask
-
 # インストール
-#brew cask install clamxav
-brew cask install dash
-brew cask install dropbox
-brew cask install firefox
-brew cask install franz
-brew cask install macvim-kaoriya
-brew cask install gimp
-brew cask install google-chrome
-brew cask install google-chrome-canary
-brew cask install google-japanese-ime
-brew cask install hyperswitch
-brew cask install iterm2-beta
-brew cask install imageoptim
-brew cask install karabiner
-brew cask install libreoffice
-brew cask install pycharm
-brew cask install skype
-brew cask install virtualbox
-brew cask install vagrant
+brew install --cask dash
+brew install --cask franz
+brew install --cask gimp
+brew install --cask google-chrome
+brew install --cask google-japanese-ime
+brew install --cask hyperswitch
+brew install --cask iterm2
+brew install --cask imageoptim
+brew install --cask karabiner-elements
+brew install --cask pycharm
+brew install --cask goland
+brew install --cask virtualbox
+brew install --cask vagrant
 
 brew cleanup
