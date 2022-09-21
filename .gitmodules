@@ -1,12 +1,12 @@
 [submodule ".vim/bundle/neobundle.vim"]
 	path = .vim/bundle/neobundle.vim
-	url = git://github.com/Shougo/neobundle.vim
+	url = https://github.com/Shougo/neobundle.vim
 [submodule ".zsh/plugins/auto-fu"]
 	path = .zsh/plugins/auto-fu
 	url = https://github.com/hchbaw/auto-fu.zsh
 [submodule ".zsh/zaw"]
 	path = .zsh/zaw
-	url = git://github.com/zsh-users/zaw.git
+	url = https://github.com/zsh-users/zaw.git
 [submodule ".zsh/cdd"]
 	path = .zsh/cdd
 	url = https://github.com/m4i/cdd.git
