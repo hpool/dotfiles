@@ -1,0 +1,37 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+brew "readline"
+brew "awscli"
+brew "direnv"
+brew "fzf"
+brew "git"
+brew "go"
+brew "jq"
+brew "lv"
+brew "mas"
+brew "the_silver_searcher"
+brew "tmux"
+brew "tree"
+brew "wget"
+brew "zsh"
+cask "1password"
+cask "docker"
+cask "goland"
+cask "google-chrome"
+cask "google-japanese-ime"
+cask "imageoptim"
+cask "iterm2"
+cask "karabiner-elements"
+cask "macvim"
+cask "meetingbar"
+cask "notion"
+cask "raycast"
+cask "slack"
+cask "zoom"
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "LINE", id: 539883307
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
